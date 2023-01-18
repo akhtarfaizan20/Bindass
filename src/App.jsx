@@ -6,10 +6,8 @@ import Login from "./All_Routes/Login";
 import Footer from "./Components/Navbar/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 
-
 function App() {
   const { pathname } = useLocation();
-  // console.log(pathname);
 
   let arr = pathname.split("/");
 
@@ -22,9 +20,6 @@ function App() {
       <Navbar />
       <AllRoutes />
       <Footer />
-     
-   
-    
     </div>
   );
 }
