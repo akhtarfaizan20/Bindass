@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+   <BrowserRouter>
     <ChakraProvider>
     <Auth0Provider
       domain="dev-p4gpobrbvueo252s.us.auth0.com"
@@ -15,5 +15,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <App />
     </Auth0Provider>
     </ChakraProvider>
-  </BrowserRouter>
+    </BrowserRouter>
+
 );
