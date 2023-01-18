@@ -5,6 +5,7 @@ import Homepage from "./All_Routes/Homepage";
 import Login from "./All_Routes/Login";
 import Footer from "./Components/Navbar/Footer";
 import Navbar from "./Components/Navbar/Navbar";
+import Cart from "./Components/cart/Cart"
 
 function App() {
   const { pathname } = useLocation();
@@ -17,9 +18,10 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar />
       <AllRoutes />
-      <Footer />
+      <Footer /> */}
+      <Cart />
     </div>
   );
 }
