@@ -1,5 +1,6 @@
 import React from 'react'
 import "./product.css"
+// import Size from './size'
 
 const Product = (props) => {
     const {desc,image,price,strickedoffprice } = props
@@ -18,6 +19,9 @@ const Product = (props) => {
             <div>
                 <img src={image} alt="prod" />
             </div>
+        </div>
+        <div>
+            {/* <Size/> */}
         </div>
         <div className='move__remove'>
             <button>Remove</button>
