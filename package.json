@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.12.1",
     "@chakra-ui/react": "^2.4.8",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@react-icons/all-files": "^4.1.0",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "framer-motion": "^8.4.3",
