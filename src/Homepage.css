@@ -25,7 +25,9 @@
   width:100%;
   height:auto;
  }
- 
+ .mobile{
+  display: none;
+ }
 @media screen and (max-width:720px){
     .items{
         display: grid;
@@ -60,5 +62,13 @@
      .images{
       width:100%;
       height:auto;
+     }
+     .mobile{
+      display: block;
+     }
+     .mobileimg{
+      width: 80px;
+      height:80px ;
+      border-radius: 50%;
      }
 }

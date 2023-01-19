@@ -5,6 +5,7 @@ import Item from "../Item"
 import Carousel from 'react-elastic-carousel'
 import { Img } from '@chakra-ui/react'
 import Item1 from '../Item1'
+import Item3 from '../Item3'
 
 const Homepage = () => {
   // const [index, setIndex] = useState(0);
@@ -88,9 +89,32 @@ const breakpoints1=[
     width:1100,itemsToShow:8
   }
 ]
+const breakpoints2=[
+  {
+    width:300,itemsToShow:7
+  },{
+    width:720,itemsToShow:7
+  }
+ 
+]
 
   return (
     <div>
+       <div style={{marginTop:"15px"}} className="mobile">
+    <Carousel breakPoints={breakpoints2} enableSwipe={true} showArrows={false} pagination={false} >
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/mad-india-circle-icon-1673616489.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/men-icon-1670851638.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/women-icon-1670851639.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/TopNav-168x168-icon-Accessories2-1669369840.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/wmw-circle-icon-1673011178.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/TopNav-168x168-icon-plus-1668515980.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/uploads/grid/app/01-TopNavigationIcon-140x140-custom-min-1658484767.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/TopNav-168x168-icon-Playp-1669267652.png" alt="bewakoof"   /></Item3>
+       <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/TopNav-168x168-icon-undrdawg1-1669267652.png" alt="bewakoof"   /></Item3>
+    
+    </Carousel>
+   
+       </div>
       <div style={{marginTop:"15px"}}>
     <Carousel breakPoints={breakpoints} enableAutoPlay={true} enableTilt={true}  autoPlaySpeed={2000} enableMouseSwipe  enableSwipe={true}   showArrows={false}>
       <Item><Img className='carouselsm' src="https://images.bewakoof.com/uploads/grid/app/mad-india-common--1673630619.jpg" alt="bewakoof" height={"450px"} /></Item>
