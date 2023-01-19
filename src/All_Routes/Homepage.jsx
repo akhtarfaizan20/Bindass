@@ -1,58 +1,71 @@
 import React, { useState } from 'react'
-import Carousel from 'react-bootstrap/Carousel';
+// import Carousel from 'react-bootstrap/Carousel';
+import Item from "../Item"
+import Carousel from 'react-elastic-carousel'
+import { Img } from '@chakra-ui/react'
+import Item1 from '../Item1'
 const Homepage = () => {
-  const [index, setIndex] = useState(0);
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  // const [index, setIndex] = useState(0);
+  // const handleSelect = (selectedIndex, e) => {
+  //   setIndex(selectedIndex);
+  const breakpoints=[
+    {
+      width:1,itemsToShow:1
+    },{
+      width:550,itemsToShow:1
+    },
+    {
+      width:760,itemsToShow:2
+    },
+    {
+      width:1100,itemsToShow:3
+    }
+]
+const breakpoints1=[
+  {
+    width:300,itemsToShow:3
+  },{
+    width:656,itemsToShow:4
+  },
+  {
+    width:760,itemsToShow:6
+  },
+  {
+    width:1100,itemsToShow:8
+  }
+]
   return (
     <div>
-       <div style={{width:"100%",height:"400px"}}> <Carousel activeIndex={index} onSelect={handleSelect}>
-       <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://www.bandhanbank.com/sites/default/files/2021-04/Bandhan_Myntra_Offer_Banner_02.jpg"
-        alt="Second slide"
-      />
+      <div style={{marginTop:"15px"}}>
+    <Carousel breakPoints={breakpoints} enableAutoPlay autoPlaySpeed={2000} enableMouseSwipe  enableSwipe>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/mad-india-common--1673630619.jpg" alt="bewakoof" height={"450px"} /></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/revamped-banner-1x1-B3A899-new1-1674029532.jpg" alt="bewakoof" height={"450px"}/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/b2g1-1x1-common-1674035537.jpg" alt="bewakoof" height={"450px"}/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-clearance-teesunder399-1674036686.jpg" height={"450px"} alt="bewakoof"/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/winterwear-1x1-common-02-1674035538.jpg" height={"450px"} alt="bewakoof"/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/mad-india-common--1673630619.jpg" height={"450px"} alt="bewakoof" /></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/revamped-banner-1x1-B3A899-new1-1674029532.jpg" height={"450px"} alt="bewakoof"/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/b2g1-1x1-common-1674035537.jpg" height={"450px"} alt="bewakoof"/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-clearance-teesunder399-1674036686.jpg" height={"450px"} alt="bewakoof"/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/winterwear-1x1-common-02-1674035538.jpg" height={"450px"} alt="bewakoof"/></Item>
 
-      
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://www.paytrigo.com/wp-content/uploads/2020/08/myntra-coupon-detail.jpg"
-        alt="Third slide"
-      />
-
-     
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://www.gyftr.com/blog/wp-content/uploads/2019/04/banners21554285340.jpg"
-        alt="First slide"
-      />
-     
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/b656a7f4-4688-4997-bb7c-54b78793981e1658752386588-Western-Wear_Desk.jpg
-        "
-        alt="First slide"
-      />
-     
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg
-        "
-        alt="First slide"
-      />
-     
-    </Carousel.Item>
-    </Carousel>   </div> </div>
+    </Carousel>
+       </div>
+       <Img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-6-1669115141.jpg" alt="banner"/>
+       <div style={{marginTop:"15px"}}>
+    <Carousel breakPoints={breakpoints1} enableSwipe >
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/new-thumbnail-icon-2022-bestseller-1671624963.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-New-Arrivals-Common-1668508339.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/hotdeals-2-1668491210.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-Collabs-Common-1668508338.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/last-size-new-thumbnaik-1668508337.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/new-thumbnail-icon-2022-copy-1669723278.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/me-shirt-thumbnail-1668508337.jpg" alt="bewakoof"   /></Item1>
+       <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/image-1668598708.png" alt="bewakoof"   /></Item1>
+    
+    </Carousel>
+       </div>
+       </div>
   )
 }
 
