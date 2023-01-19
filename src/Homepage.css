@@ -1,0 +1,14 @@
+.items{
+   display: grid;
+   grid-template-columns: repeat(6,15%);
+   width: auto;
+ border: 1px solid red;
+}
+@media screen and (max-width:720px){
+    .items{
+        display: grid;
+        grid-template-columns: repeat(3,31%);
+        width: auto;
+        border: 1px solid yellow;
+     }
+}
