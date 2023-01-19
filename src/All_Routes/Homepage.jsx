@@ -48,6 +48,7 @@ const breakpoints1=[
       <Item><Img src="https://images.bewakoof.com/uploads/grid/app/b2g1-1x1-common-1674035537.jpg" height={"450px"} alt="bewakoof"/></Item>
       <Item><Img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-clearance-teesunder399-1674036686.jpg" height={"450px"} alt="bewakoof"/></Item>
       <Item><Img src="https://images.bewakoof.com/uploads/grid/app/winterwear-1x1-common-02-1674035538.jpg" height={"450px"} alt="bewakoof"/></Item>
+      <Item><Img src="https://images.bewakoof.com/uploads/grid/app/common-new-mad-india-1674102985.jpg" height={"450px"} alt="bewakoof"/></Item>
 
     </Carousel>
        </div>
@@ -64,8 +65,21 @@ const breakpoints1=[
        <Item1><Img src="https://images.bewakoof.com/uploads/grid/app/image-1668598708.png" alt="bewakoof"   /></Item1>
     
     </Carousel>
-       </div>
-       </div>
+  </div>
+    
+        <table>
+        <tr>
+          <td><Img src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-men-1674030025.jpg" alt="banner" />
+        </td>
+          <td><Img src=" https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Women-1674030025.jpg" alt="banner" />
+       </td>
+        </tr>
+        
+        </table>
+        <div>
+          
+        </div>
+   </div>   
   )
 }
 
