@@ -26,23 +26,22 @@ import {
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
   FiMenu,
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
+import { SiProducthunt } from "react-icons/si";
+import { HiOutlineUser } from "react-icons/hi";
 import AdminHome from "./AdminHome";
 import AdminOrders from "./AdminOrders";
 import Customers from "./Customers";
 import AdminProducts from "./AdminProducts";
 
 const LinkItems = [
-  { name: "Home", icon: FiHome, href: "" },
+  { name: "Dasboard", icon: FiHome, href: "" },
   { name: "Orders", icon: FiTrendingUp, href: "/orders" },
-  { name: "Products", icon: FiCompass, href: "/products" },
-  { name: "Customers", icon: FiStar, href: "/customers" },
+  { name: "Products", icon: SiProducthunt, href: "/products" },
+  { name: "Customers", icon: HiOutlineUser, href: "/customers" },
   // { name: "Settings", icon: FiSettings },
 ];
 

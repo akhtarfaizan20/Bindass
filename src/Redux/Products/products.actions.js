@@ -2,7 +2,7 @@ import axios from "axios";
 import * as types from "./products.types";
 
 export const getProducts =
-  (target, page = 1, limit = 10) =>
+  ({ target, page = 1, limit = 10 }) =>
   (dispatch) => {
     dispatch({ type: types.GET_PRODUCT_LOADING });
 
@@ -19,5 +19,22 @@ export const getProducts =
       })
       .catch(() => {
         dispatch({ type: types.GET_PRODUCT_ERROR });
+      });
+  };
+
+export const getTotalProducts =
+  (limit = 10) =>
+  (dispatch) => {
+    dispatch({ type: types.GET_TOTAL_PRODUCT_LOADING });
+    return axios
+      .get(`http://localhost:8080/products`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_TOTAL_PRODUCT_SUCCESS,
+          payload: Math.ceil(res.data.length / limit),
+        });
+      })
+      .catch(() => {
+        dispatch({ type: types.GET_TOTAL_PRODUCT_ERROR });
       });
   };
