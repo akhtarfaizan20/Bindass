@@ -47,9 +47,9 @@ const AdminProducts = () => {
       <Center>
         <Heading>Products</Heading>
       </Center>
-      <Box width={"100%"}>
+      <Box>
         <TableContainer>
-          <Table variant="striped" colorScheme="teal">
+          <Table variant="striped" colorScheme="teal" className="productTable">
             <TableCaption>
               <AdminPagination
                 total={totalPages}
@@ -62,7 +62,7 @@ const AdminProducts = () => {
                 <Th>ID</Th>
                 <Th>Image</Th>
                 <Th>Brand</Th>
-                {/* <Th>Name</Th> */}
+                <Th>Name</Th>
                 <Th isNumeric>Price</Th>
               </Tr>
             </Thead>

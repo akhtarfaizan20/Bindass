@@ -1,4 +1,4 @@
-import { Image, Td, Tr } from "@chakra-ui/react";
+import { Image, Td, Text, Tr } from "@chakra-ui/react";
 import React from "react";
 
 const Row = ({ id, image, brand, desc, price }) => {
@@ -11,7 +11,9 @@ const Row = ({ id, image, brand, desc, price }) => {
       </Td>
 
       <Td>{brand}</Td>
-      {/* <Td>{desc}</Td> */}
+      <Td>
+        <Text>{desc}</Text>
+      </Td>
       <Td isNumeric>₹{dollarIndianLocale.format(price)}</Td>
     </Tr>
   );
