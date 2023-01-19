@@ -53,6 +53,27 @@ export const productReducer = (state = initState, { type, payload }) => {
         totalPages: payload,
       };
     }
+    case types.EDIT_PRODUCT_LOADING: {
+      return {
+        ...state,
+        loading: true,
+        error: false,
+      };
+    }
+    case types.EDIT_PRODUCT_ERROR: {
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
+    }
+    case types.EDIT_PRODUCT_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        error: false,
+      };
+    }
     default: {
       return state;
     }
