@@ -2,15 +2,11 @@ import { Box, Button, Image, Input, Td, Text, Tr } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { MdDone, MdOutlineEdit } from "react-icons/md";
 import { GrClose } from "react-icons/gr";
-import { set } from "lodash";
-import { useDispatch } from "react-redux";
-import { editProducts } from "../../../Redux/Products/products.actions";
 
-const Row = ({ id, image, brand, desc, price, page }) => {
+const Row = ({ id, image, brand, desc, price, handleEdit }) => {
   const [editable, setEditable] = useState(false);
   const [editValue, setEditValue] = useState("");
   let dollarIndianLocale = Intl.NumberFormat("en-IN");
-  const dispatch = useDispatch();
   return (
     <Tr>
       <Td>{id}</Td>
@@ -37,7 +33,7 @@ const Row = ({ id, image, brand, desc, price, page }) => {
               size={"sm"}
               variant={"ghost"}
               onClick={() => {
-                dispatch(editProducts(id, editValue, page));
+                handleEdit(id, editValue);
               }}
             >
               <MdDone />
