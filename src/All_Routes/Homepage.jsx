@@ -40,9 +40,27 @@ const data4=[
    {url:"https://images.bewakoof.com/uploads/grid/app/category-box-Dress-1672907485.png"},
 
 ]
+const data6=[
+  {url:"https://images.bewakoof.com/uploads/grid/app/category-box-Mobile-covers-1672907490.png"},
+  {url:"https://images.bewakoof.com/uploads/grid/app/category-box-new-mugs-1673005212.jpg"},
+  {url:"https://images.bewakoof.com/uploads/grid/app/category-box-backpacks-1672907481.png"},
+  {url:"https://images.bewakoof.com/uploads/grid/app/category-box-notebooks-1672896372.jpg"},
+   {url:"https://images.bewakoof.com/uploads/grid/app/category-box-sliders-men-1672907494.png"},
+   {url:"https://images.bewakoof.com/uploads/grid/app/category-box-caps-1672907483.png"},
+
+]
+const data8=[
+{url:"https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2023-winterwear-common-Pastels-01-1673253851.jpg"},
+{url:"https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2023-BFtees-offer-1673631218.jpg"},
+{url:"https://images.bewakoof.com/uploads/grid/app/plus-size-mid-banner-1671788992.jpg"},
+{url:"https://images.bewakoof.com/uploads/grid/app/windcheater-40-off-1673631221.jpg"},    
+]
   const [data1,setData1]=useState(data)
   const [data3,setData3]=useState(data2)
-  const [data5,setData4]=useState(data4)
+  const [data5,setData5]=useState(data4)
+  const [data7,setData7]=useState(data6)
+  const [data9,setData9]=useState(data8)
+  
   console.log(data1[0].url);
   const breakpoints=[
     {
@@ -144,7 +162,27 @@ const breakpoints1=[
       
     </Carousel>
        </div>
-       </div>
+       <Img  src="https://images.bewakoof.com/uploads/grid/app/desktop-survey-1673330211.jpg" alt="banner" className='images'/>
+       <div className='items3'>
+    {
+      data7?.map(({url},i)=>(
+       <div key={i}><Img src={url} alt="bindass"/></div> 
+      ))
+    }
+    </div>
+    <div className='items2'>
+    {
+      data9?.map(({url},i)=>(
+       <div key={i}><Img src={url} alt="bindass"/></div> 
+      ))
+    }
+
+    </div>
+    <Img  src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg" alt="banner" className='images'/>
+    <Img  src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg" alt="banner" className='images'/>
+      
+      
+      </div>
   )
 }
 
