@@ -1,29 +1,28 @@
-import * as types from "./products.types";
+import * as types from "./cart.types";
 
 const initState = {
   loading: false,
   error: false,
   products: [],
-  totalPages: 1,
 };
 
-export const productReducer = (state = initState, { type, payload }) => {
+export const cartReducer = (state = initState, { type, payload }) => {
   switch (type) {
-    case types.GET_PRODUCT_LOADING: {
+    case types.GET_CART_LOADING: {
       return {
         ...state,
         loading: true,
         error: false,
       };
     }
-    case types.GET_PRODUCT_ERROR: {
+    case types.GET_CART_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case types.GET_PRODUCT_SUCCESS: {
+    case types.GET_CART_SUCCESS: {
       return {
         ...state,
         loading: false,
@@ -31,43 +30,42 @@ export const productReducer = (state = initState, { type, payload }) => {
         products: payload,
       };
     }
-    case types.GET_TOTAL_PRODUCT_LOADING: {
+    case types.DELETE_CART_LOADING: {
       return {
         ...state,
         loading: true,
         error: false,
       };
     }
-    case types.GET_TOTAL_PRODUCT_ERROR: {
+    case types.DELETE_CART_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case types.GET_TOTAL_PRODUCT_SUCCESS: {
+    case types.DELETE_CART_SUCCESS: {
       return {
         ...state,
         loading: false,
         error: false,
-        totalPages: payload,
       };
     }
-    case types.EDIT_PRODUCT_LOADING: {
+    case types.EDIT_CART_LOADING: {
       return {
         ...state,
         loading: true,
         error: false,
       };
     }
-    case types.EDIT_PRODUCT_ERROR: {
+    case types.EDIT_CART_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case types.EDIT_PRODUCT_SUCCESS: {
+    case types.EDIT_CART_SUCCESS: {
       return {
         ...state,
         loading: false,
