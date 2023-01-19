@@ -35,19 +35,20 @@ function LoginAuth() {
 
 
       {isAuthenticated && (
-      <Flex justifyContent="center" mt={4}>
+      <Flex justifyContent="center" >
       <Popover placement="bottom" isLazy>
         <PopoverTrigger>
           
 
         
         <Avatar
-        size={"lg"}
+        size={"sm"}
         src={user.picture}
         alt={"Author"}
-        css={{
-          border: "2px solid white",
-        }}
+        // css={{
+        //   border: "2px solid white",
+        // }}
+        
         />
         </PopoverTrigger>
         <PopoverContent _focus={{ boxShadown: 'none' }}>
@@ -57,7 +58,7 @@ function LoginAuth() {
           <PopoverBody w="full">
 
           {isAuthenticated && (
-        <Center py={6}>
+        <Center >
           <Box
             maxW={"270px"}
             w={"full"}
@@ -84,12 +85,15 @@ function LoginAuth() {
               />
             </Flex>
 
-            <Box p={6}>
+            <Box >
               <Stack spacing={0} align={"center"} mb={5}>
                 <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
                   {user.name}
                 </Heading>
-                <Text color={"gray.500"}>{user.email}</Text>
+
+                <Heading fontSize={"sm"} fontWeight={500} fontFamily={"body"} >
+                  {user.email}
+                </Heading>
               </Stack>
 
               <Button

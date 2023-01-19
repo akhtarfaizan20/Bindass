@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
@@ -42,13 +38,21 @@ const Navbar = () => {
           <ul>
           <li>
 
-          <NavLink to="/products/men">Men</NavLink>
+          <NavLink to="/products/men" 
+          className="adddd"
+          >Men</NavLink>
             </li>
             <li>
-              <NavLink to="/products/women">Women</NavLink>
+              <NavLink to="/products/women" 
+          className="adddd"
+              
+              >Women</NavLink>
             </li>
             <li>
-              <NavLink to="/">Mobile</NavLink>
+              <NavLink to="/"
+          className="adddd"
+              
+              >Mobile</NavLink>
             </li>
           </ul>
         </div>
@@ -59,13 +63,14 @@ const Navbar = () => {
           <li 
             
             style={{
-              "marginLeft":"-5em"
+              "marginLeft":"-5em",
+              "marginTop":"-1em"
             }}
             >
 
               <InputGroup
               variant="filled"
-              size='lg'
+              size='sm'
               >
                 <InputLeftElement
                   pointerEvents="none"
@@ -74,9 +79,17 @@ const Navbar = () => {
                 <Input type="tel"   focusBorderColor='black.400' placeholder="Search Product" />
               </InputGroup>
             </li>
-            <li><AiFillHeart/></li>
+            <li
+               style={{
+                "marginTop":"-1em"
+              }}
+            ><AiFillHeart/></li>
            
-            <li>
+            <li
+               style={{
+                "marginTop":"-1em"
+              }}
+            >
             <NavLink to="/cart">
               
               
@@ -84,7 +97,11 @@ const Navbar = () => {
               </NavLink>
               </li>
 
-            <li>
+            <li
+            style={{
+              "marginTop":"-1em"
+            }}
+            >
               <LoginAuth />
             </li>
           </ul>
@@ -96,8 +113,8 @@ const Navbar = () => {
             <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
               <GiHamburgerMenu
                 style={{
-                  marginTop: "20px",
-                  marginLeft: "20px",
+                
+                  "marginRight": "3em",
                 }}
               />
             </a>
