@@ -12,13 +12,8 @@ import {
   getCartProducts,
 } from "../../Redux/Cart/cart.actions";
 
-const getData = () => {
-  return fetch(`http://localhost:8080/carts`).then((res) => res.json());
-};
 
 const Cart = () => {
-  const [data, setData] = useState([]);
-
   const { loading, products, error } = useSelector(
     (store) => store.cartManager
   );
@@ -40,13 +35,31 @@ const Cart = () => {
     dispatch(getCartProducts());
   };
 
+  // total discount calculation
+  let res = products.map((el)=>{
+    return el.qty*el.product.price
+  })
+  res = res.reduce(function(sum,el){
+    return sum+el
+  },0)
+  // total original price calculation
+  let MRP = products.map((el)=>{
+    return el.qty*(+el.product.strickedoffprice.split(",").join("").substring(1))
+
+  })
+  MRP = MRP.reduce(function(sum,el){
+    return sum+el
+  },0)
+  // saving amount
+  let saving = MRP-res
+console.log(saving)
   return (
     <div className="main__container">
       <h2>
         <b>My Bag</b> {products.length} item(s)
       </h2>
       <div className="card__container">
-        {/* ----- Slected item in cart ----- */}
+        {/* ----- Selected item in cart ----- */}
         <div className="product__container">
           <div>
             <img
@@ -118,7 +131,7 @@ const Cart = () => {
               </div>
               <div>
                 <p>Total MRP (Incl. of taxes) </p>
-                <p>₹ 10896</p>
+                <p>₹ {MRP}</p>
               </div>
               <div>
                 <p>Shipping Charges </p>
@@ -126,15 +139,15 @@ const Cart = () => {
               </div>
               <div>
                 <p>Bag Discount </p>
-                <p>- ₹6243</p>
+                <p>- {saving}</p>
               </div>
               <div>
                 <p>Subtotal </p>
-                <p>₹ 4653</p>
+                <p>₹ {res}</p>
               </div>
               <div>
                 <div>
-                  <p>You are saving ₹ 6243 on this order</p>
+                  <p>You are saving ₹ {saving} on this order</p>
                 </div>
               </div>
             </div>
@@ -143,7 +156,7 @@ const Cart = () => {
                 <span>
                   <p>Total</p>
                   <p>
-                    <b>₹ 4653</b>
+                    <b>₹ {res}</b>
                   </p>
                 </span>
                 <button>ADD ADDRESS</button>

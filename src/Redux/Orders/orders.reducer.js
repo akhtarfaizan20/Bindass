@@ -1,51 +1,51 @@
-import * as types from "./products.types";
+import * as types from "./orders.types";
 
 const initState = {
   loading: false,
   error: false,
-  products: [],
+  orders: [],
   totalPages: 1,
 };
 
-export const productReducer = (state = initState, { type, payload }) => {
+export const ordersReducer = (state = initState, { type, payload }) => {
   switch (type) {
-    case types.GET_PRODUCT_LOADING: {
+    case types.GET_ORDERS_LOADING: {
       return {
         ...state,
         loading: true,
         error: false,
       };
     }
-    case types.GET_PRODUCT_ERROR: {
+    case types.GET_ORDERS_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case types.GET_PRODUCT_SUCCESS: {
+    case types.GET_ORDERS_SUCCESS: {
       return {
         ...state,
         loading: false,
         error: false,
-        products: payload,
+        orders: payload,
       };
     }
-    case types.GET_TOTAL_PRODUCT_LOADING: {
+    case types.GET_TOTAL_ORDERS_LOADING: {
       return {
         ...state,
         loading: true,
         error: false,
       };
     }
-    case types.GET_TOTAL_PRODUCT_ERROR: {
+    case types.GET_TOTAL_ORDERS_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case types.GET_TOTAL_PRODUCT_SUCCESS: {
+    case types.GET_TOTAL_ORDERS_SUCCESS: {
       return {
         ...state,
         loading: false,
@@ -53,42 +53,21 @@ export const productReducer = (state = initState, { type, payload }) => {
         totalPages: payload,
       };
     }
-    case types.EDIT_PRODUCT_LOADING: {
+    case types.EDIT_ORDERS_LOADING: {
       return {
         ...state,
         loading: true,
         error: false,
       };
     }
-    case types.EDIT_PRODUCT_ERROR: {
+    case types.EDIT_ORDERS_ERROR: {
       return {
         ...state,
         loading: false,
         error: true,
       };
     }
-    case types.EDIT_PRODUCT_SUCCESS: {
-      return {
-        ...state,
-        loading: false,
-        error: false,
-      };
-    }
-    case types.DELETE_PRODUCT_LOADING: {
-      return {
-        ...state,
-        loading: true,
-        error: false,
-      };
-    }
-    case types.DELETE_PRODUCT_ERROR: {
-      return {
-        ...state,
-        loading: false,
-        error: true,
-      };
-    }
-    case types.DELETE_PRODUCT_SUCCESS: {
+    case types.EDIT_ORDERS_SUCCESS: {
       return {
         ...state,
         loading: false,

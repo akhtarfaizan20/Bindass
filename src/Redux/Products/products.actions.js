@@ -56,3 +56,17 @@ export const editProducts = (id, price) => (dispatch) => {
       dispatch({ type: types.EDIT_PRODUCT_ERROR });
     });
 };
+
+export const deleteProduct = (id) => (dispatch) => {
+  dispatch({ type: types.DELETE_PRODUCT_LOADING });
+  return axios
+    .delete(`http://localhost:8080/products/${id}`)
+    .then((res) => {
+      dispatch({
+        type: types.DELETE_PRODUCT_SUCCESS,
+      });
+    })
+    .catch(() => {
+      dispatch({ type: types.DELETE_PRODUCT_SUCCESS });
+    });
+};
