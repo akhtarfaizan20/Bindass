@@ -149,7 +149,7 @@
       "brand": "Levi's",
       "desc": "Men's 511 Slim Fit Jeans",
       "desc_url": "https://www.amazon.in/Levis-Mens-Jeans-18298-1241_Dark-Indigo_32/dp/B09Z77K2VS/ref=sr_1_6?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-6",
-      "price": 1789,
+      "price": 1235,
       "price_url": "https://www.amazon.in/Levis-Mens-Jeans-18298-1241_Dark-Indigo_32/dp/B09Z77K2VS/ref=sr_1_6?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-6",
       "ratings": 3.9,
       "strickedoffprice": "₹2,899",
@@ -576,7 +576,7 @@
       "brand": "KOTTY",
       "desc": "Womens High Rise Cotton Lycra Jeans",
       "desc_url": "https://www.amazon.in/KOTTY-Womens-Waist-Regular-Length/dp/B09172KWJ4/ref=sr_1_28?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-28",
-      "price": 499,
+      "price": 477,
       "price_url": "https://www.amazon.in/KOTTY-Womens-Waist-Regular-Length/dp/B09172KWJ4/ref=sr_1_28?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-28",
       "ratings": 3.7,
       "strickedoffprice": "₹1,999",
@@ -1568,7 +1568,7 @@
     {
       "image": "https://m.media-amazon.com/images/I/51M45Q65YeL._AC_UL320_.jpg",
       "url": "https://www.amazon.in/SweatyRocks-Womens-Graphic-Sleeve-Hearts/dp/B09WQZ7WN7/ref=sr_1_omk_6?keywords=womens+t+shirts&qid=1671181919&sprefix=womens+t+shir%2Caps%2C501&sr=8-6",
-      "price": 5999,
+      "price": 2699,
       "price_url": "https://www.amazon.in/SweatyRocks-Womens-Graphic-Sleeve-Hearts/dp/B09WQZ7WN7/ref=sr_1_omk_6?keywords=womens+t+shirts&qid=1671181919&sprefix=womens+t+shir%2Caps%2C501&sr=8-6",
       "brand": "SweatyRocks",
       "desc": "Women's Crop Cami Top Summer Sleeveless Tank Tops Drawstring Cute Camisole",
@@ -3392,19 +3392,24 @@
   ],
   "carts": [
     {
-      "image": "https://m.media-amazon.com/images/I/71pNnnaOIzS._AC_UL320_.jpg",
-      "url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-      "brand": "Lyned",
-      "desc": "Mens Cotton Half Sleeve Striped Polo T Shirt with Collar",
-      "desc_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-      "price": 569,
-      "price_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-      "ratings": 3.6,
-      "strickedoffprice": "₹2,499",
-      "strickedoffprice_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-      "target": "men",
-      "category": "t-shirt",
-      "id": 1
+      "product": {
+        "image": "https://m.media-amazon.com/images/I/71pNnnaOIzS._AC_UL320_.jpg",
+        "url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+        "brand": "Lyned",
+        "desc": "Mens Cotton Half Sleeve Striped Polo T Shirt with Collar",
+        "desc_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+        "price": 569,
+        "price_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+        "ratings": 3.6,
+        "strickedoffprice": "₹2,499",
+        "strickedoffprice_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+        "target": "men",
+        "category": "t-shirt",
+        "id": 1
+      },
+      "id": 1,
+      "qty": 5,
+      "user": "akhtarfaizan20@gmail.com"
     }
   ],
   "users": [
@@ -3414,6 +3419,51 @@
       "name": "Faizan Akhtar",
       "phone": "9718245953"
     }
-    
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user": "akhtarfaizan20@gmail.com",
+      "products": [
+        {
+          "product": {
+            "image": "https://m.media-amazon.com/images/I/71pNnnaOIzS._AC_UL320_.jpg",
+            "url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "brand": "Lyned",
+            "desc": "Mens Cotton Half Sleeve Striped Polo T Shirt with Collar",
+            "desc_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "price": 569,
+            "price_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "ratings": 3.6,
+            "strickedoffprice": "₹2,499",
+            "strickedoffprice_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "target": "men",
+            "category": "t-shirt",
+            "id": 1
+          },
+          "qty": 5
+        },
+        {
+          "product": {
+            "image": "https://m.media-amazon.com/images/I/71pNnnaOIzS._AC_UL320_.jpg",
+            "url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "brand": "Lyned",
+            "desc": "Mens Cotton Half Sleeve Striped Polo T Shirt with Collar",
+            "desc_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "price": 569,
+            "price_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "ratings": 3.6,
+            "strickedoffprice": "₹2,499",
+            "strickedoffprice_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+            "target": "men",
+            "category": "t-shirt",
+            "id": 1
+          },
+          "qty": 5
+        }
+      ],
+      "date": 1674216196233,
+      "status": "Pending"
+    }
   ]
 }

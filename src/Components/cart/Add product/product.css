@@ -38,6 +38,27 @@
     color:rgb(118, 116, 116);
 }
 
+.prod__qty{
+margin-top: -1rem;
+  display: flex;
+  flex-direction:start;
+  gap:1rem;
+}
+.prod__qty>div{
+     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+     border-radius: 5px;
+     padding: 0.2rem;
+     padding-left: 0.4rem;
+    }
+ 
+.prod__qty>div select{
+    border:none;
+    font-size: 13px;
+    font-weight: 550;
+     outline: none;
+
+}
+
 .move__remove{
     display: grid;
     grid-template-columns: 35% 65%;

@@ -94,7 +94,6 @@ export const cartReducer = (state = initState, { type, payload }) => {
         error: false,
       };
     }
-
     default: {
       return state;
     }
