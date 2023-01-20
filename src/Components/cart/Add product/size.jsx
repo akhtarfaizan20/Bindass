@@ -8,13 +8,12 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  Lorem
 } from '@chakra-ui/react'
  
 import React from 'react'
  
  
- export default function Size() {
+ const Size = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [size, setSize] = React.useState('md')
   
@@ -41,7 +40,8 @@ import React from 'react'
             <ModalHeader>Modal Title</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Lorem count={2} />
+              {/* <Lorem count={2} /> */}
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus expedita corrupti est blanditiis magni aspernatur voluptatum tempore sit quaerat neque, similique quo debitis totam facilis aut ex commodi nostrum deleniti.
             </ModalBody>
             <ModalFooter>
               <Button onClick={onClose}>Close</Button>
@@ -51,3 +51,4 @@ import React from 'react'
       </>
     )
   }
+  export default Size

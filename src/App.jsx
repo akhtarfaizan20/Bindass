@@ -6,7 +6,8 @@ import Login from "./All_Routes/Login";
 import Footer from "./Components/Navbar/Footer";
 import LoginAuth from "./Components/Navbar/loginAuth";
 import Navbar from "./Components/Navbar/Navbar";
-import Cart from "./Components/cart/Cart"
+
+
 
 function App() {
   const { pathname } = useLocation();
@@ -22,7 +23,7 @@ function App() {
       <Navbar />
       <AllRoutes />
       <Footer />
-     
+   
     </div>
   );
 }
