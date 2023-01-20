@@ -7,6 +7,7 @@ import ProductDiv from "../Components/Products/ProductDiv";
 import { Button } from "@chakra-ui/react";
 import Filter from "../Components/Products/Filter";
 
+
 const Products = () => {
   const { loading, error, products } = useSelector(
     (store) => store.productManager
@@ -14,15 +15,18 @@ const Products = () => {
   const { target } = useParams();
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
+    const limit=12;
+  console.log(target)
+
   useEffect(() => {
-    dispatch(getProducts(target, page));
-  }, [page]);
+    dispatch(getProducts({target, page,limit}));
+  }, [page,target]);
 
   let name;
 
   if (target==="men" ? name="Men" : name="Women")
-  console.log(name)
-console.log(products)
+ // console.log(name)
+//console.log(products)
   return (
     <div className={styles.productSection}>
       <div className={styles.proTop}>
