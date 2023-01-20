@@ -16,12 +16,14 @@ import {
   VisuallyHidden,
   List,
   ListItem,
+  useToast,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleProducts } from "../Redux/SingleProduct/singleProduct.actions";
+import { addToCart } from "../Redux/Cart/cart.actions";
 
 
 
@@ -29,7 +31,7 @@ import { getSingleProducts } from "../Redux/SingleProduct/singleProduct.actions"
 const ProductDetails = () => {
   const {id}= useParams()
   const dispatch =useDispatch()
-
+  const toast=useToast()
   const { loading, error, product  } = useSelector(
     (store) => store.singleProductManager
   );
@@ -40,6 +42,17 @@ const ProductDetails = () => {
   },[])
 
   console.log(product)
+  const handleAddToCart=async()=>{
+    await dispatch(addToCart())
+    toast({
+      title: 'Added to Cart',
+      description: "Item has successfully added to Cart",
+      status: 'success',
+      duration: 6000,
+      isClosable: true,
+    })
+
+  }
   
   return (
 
@@ -201,6 +214,7 @@ const ProductDetails = () => {
                 transform: "translateY(2px)",
                 boxShadow: "lg",
               }}
+              onClick={handleAddToCart}
             >
               Add to cart
             </Button>

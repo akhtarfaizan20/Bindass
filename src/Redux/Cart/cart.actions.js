@@ -38,3 +38,15 @@ export const editCartItem = (id, qty) => (dispatch) => {
       dispatch({ type: types.EDIT_CART_ERROR });
     });
 };
+
+export const addToCart=(item)=>(dispatch)=>{
+
+  dispatch({type:types.ADD_CART_LOADING})
+   return axios.post(`http://localhost:8080/carts` , item)
+   .then(() => {
+    dispatch({ type: types.ADD_CART_SUCCESS });
+  })
+  .catch(() => {
+    dispatch({ type: types.ADD_CART_ERROR });
+  });
+}
