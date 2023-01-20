@@ -6,7 +6,6 @@ import {
   Center,
   Image,
   Flex,
-  Text,
   Stack,
   Button,
   useColorModeValue,
@@ -14,13 +13,30 @@ import {
   PopoverTrigger,
   PopoverContent,
   PopoverBody,
+  keyframes,
+
 } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function LoginAuth() {
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const size = "45px";
+  const color = "teal";
 
-  console.log(user);
+  const pulseRing = keyframes`
+    0% {
+      transform: scale(0.33);
+    }
+    40%,
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+    `;
+
+
   return (
     <div>
       {!isAuthenticated ? (
@@ -28,22 +44,51 @@ function LoginAuth() {
       ) : null}
 
       {isAuthenticated && (
-        <Flex justifyContent="center" mt={4}>
+        <Flex justifyContent="center">
           <Popover placement="bottom" isLazy>
             <PopoverTrigger>
-              <Avatar
-                size={"lg"}
-                src={user.picture}
-                alt={"Author"}
-                css={{
-                  border: "2px solid white",
-                }}
-              />
+              <Flex
+                justifyContent="center"
+                alignItems="center"
+                h="216px"
+                w="full"
+                overflow="hidden"
+              >
+                {/* Ideally, only the box should be used. The <Flex /> is used to style the preview. */}
+                <Box
+                  as="div"
+                  position="relative"
+                  w={size}
+                  h={size}
+                  _before={{
+                    content: "''",
+                    position: "relative",
+                    display: "block",
+                    width: "300%",
+                    height: "300%",
+                    boxSizing: "border-box",
+                    marginLeft: "-100%",
+                    marginTop: "-100%",
+                    borderRadius: "50%",
+                    bgColor: color,
+                    animation: `2.25s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`,
+                  }}
+                >
+                  <Avatar
+                    src={user.picture}
+                    size="full"
+                    position="absolute"
+                    top={0}
+                  />
+                </Box>
+              </Flex>
+
             </PopoverTrigger>
             <PopoverContent _focus={{ boxShadown: "none" }}>
               <PopoverBody w="full">
                 {isAuthenticated && (
-                  <Center py={6}>
+                  <Center>
+
                     <Box
                       maxW={"270px"}
                       w={"full"}
@@ -70,7 +115,8 @@ function LoginAuth() {
                         />
                       </Flex>
 
-                      <Box p={6}>
+                      <Box>
+
                         <Stack spacing={0} align={"center"} mb={5}>
                           <Heading
                             fontSize={"2xl"}
@@ -79,7 +125,16 @@ function LoginAuth() {
                           >
                             {user.name}
                           </Heading>
-                          <Text color={"gray.500"}>{user.email}</Text>
+
+
+                          <Heading
+                            fontSize={"sm"}
+                            fontWeight={500}
+                            fontFamily={"body"}
+                          >
+                            {user.email}
+                          </Heading>
+
                         </Stack>
 
                         <Button

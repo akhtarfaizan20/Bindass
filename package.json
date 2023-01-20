@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.12.1",
+    "@chakra-ui/icons": "^2.0.16",
     "@chakra-ui/react": "^2.4.8",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -27,6 +28,7 @@
     "react-router-dom": "^6.6.2",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
+    "styled-components": "^5.3.6",
     "thunk": "^0.0.1"
   },
   "devDependencies": {
