@@ -1,80 +1,95 @@
-.productSection{
-    margin: auto;
-    width: 80%;
+.productSection {
+  margin: auto;
+  width: 80%;
 }
-.proTop{
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-    color: gray;
-    padding: .5rem;
-    margin: 1rem;
-
+.proTop {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  color: gray;
+  padding: 0.5rem;
+  margin: 1rem;
 }
-.styles.proMid{
-    display: flex;
-    flex-direction: column;
-    padding: .5rem;
-    margin: 1rem;
+.styles.proMid {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 1rem;
 }
-.proHeading{
-    font-size: 26px;
-    font-weight: bold;
-    padding: .5rem;
-    margin: 1rem;
+.proHeading {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin: 1rem;
 }
-.proBody{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    /* border: 1px solid black; */
-    gap: 2rem;
+.proBody {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  /* border: 1px solid black; */
+  gap: 2rem;
+  
 }
-.proFilter{
-
-    width: 25%;
-    /* border: 1px solid red; */
-    height: auto;
-    padding: 2rem;
-    
-}
-.filterHead{
-    font-size: 16px;
-    color: gray;
-    padding: 2rem;
-   
-}
-.FilterBody{
-    display: flex;
-    flex-direction: column;
-
-}
-
-.proMainSec{
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    /* border: 1px solid red; */
-    height: auto;
-}
-
-.proSortSec{
-    font-size: 12px;
-    color: gray;
-    padding: 2rem;
-    margin-top: 1rem;
-
-}
-.productMain{
+.proFilter {
+  width: 25%;
+  /* border: 1px solid red; */
  
-    display: grid;
-    grid-template-rows: repeat(4,auto);
-    grid-template-columns: repeat(3,250px);
-    gap: 2rem;
-    /* border: 1px solid blue; */
-    text-align: center;
-   
-
+}
+.filterHead {
+  font-size: 16px;
+  color: gray;
+  padding: 2rem;
+  
+}
+.FilterBody {
+  display: flex;
+  flex-direction: column;
 }
 
+.proMainSec {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  /* border: 1px solid red; */
+  height: auto;
+}
+
+.proSortSec {
+  font-size: 12px;
+  color: gray;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+.productMain {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(3, 250px);
+  gap: 2rem;
+  /* border: 1px solid blue; */
+  text-align: center;
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+
+    .productMain {
+        display: grid;
+        grid-template-rows: repeat(6, auto);
+        grid-template-columns: repeat(2, 250px);
+        gap: 2rem;
+        /* border: 1px solid blue; */
+        text-align: center;
+      }
+    
+ }
+ @media screen and (max-width: 480px) {
+     .productMain {
+        display: grid;
+        grid-template-rows: repeat(12, auto);
+        grid-template-columns: repeat(1, 250px);
+        gap: 2rem;
+        /* border: 1px solid blue; */
+        text-align: center;
+      }
+    
+ } 

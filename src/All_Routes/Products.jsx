@@ -88,6 +88,7 @@ const Products = () => {
               <div className={styles.productMain}>
                 {products.map((e) => (
                   <ProductDiv data={e} />
+                 // <ProductDiv data={e} ></ProductDiv>
                 ))}
               </div>
               <div style={{ margin: "auto", gap: "2rem",  padding: "2rem" }}>

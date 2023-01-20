@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./ProductDiv.module.css";
 import { Box, Image, Badge } from "@chakra-ui/react";
 let dollarIndianLocale = Intl.NumberFormat("en-IN");
-import { AiOutlineStar} from "react-icons/ai";
+import { StarIcon} from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const ProductDiv = ({ data }) => {
-  const { image, desc, price, strickedoffprice, ratings } = data;
+  const { image, desc, price, strickedoffprice, ratings ,id} = data;
 
   return (
     <Box
@@ -16,9 +17,10 @@ const ProductDiv = ({ data }) => {
       overflow="hidden"
       textAlign={"left"}
     >
-      <Image margin="auto" height="250px" src={image} alt={image} />
+      <Link to ={`/product-details/${id}`}><Image margin="auto" height="250px" src={image} alt={image} /></Link>
+      
       <Box display={"flex"} flexDirection={"row"}>
-        <Box width={"80%"}>
+        <Box p={2} width={"80%"}>
           <Box mt="1" as="p" lineHeight="tight" noOfLines={1} marginLeft="10px">
             {desc}
           </Box>
@@ -31,7 +33,7 @@ const ProductDiv = ({ data }) => {
               /-
             </Box>
           </Box>
-          <Box paddingBottom="10px">
+          <Box >
             <Box
               marginLeft="4px"
               as="span"
@@ -45,11 +47,11 @@ const ProductDiv = ({ data }) => {
               <s>{strickedoffprice}</s>
             </Box>
           </Box>
-          <Box display="flex" mt="2" alignItems="center">
+          <Box px={2}  display="flex" mt="2" alignItems="center">
             {Array(5)
               .fill("")
               .map((_, i) => (
-                <AiOutlineStar
+                <StarIcon
                   key={i}
                   color={i < ratings ? "teal.500" : "gray.300"}
                 />
@@ -57,7 +59,7 @@ const ProductDiv = ({ data }) => {
 
           </Box>
         </Box>
-        <Box>
+        <Box >
           <Image
             boxSize="30px"
             src="https://images.bewakoof.com/web/Wishlist.svg"
