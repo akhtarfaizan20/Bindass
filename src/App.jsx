@@ -7,8 +7,6 @@ import Footer from "./Components/Navbar/Footer";
 import LoginAuth from "./Components/Navbar/loginAuth";
 import Navbar from "./Components/Navbar/Navbar";
 
-
-
 function App() {
   const { pathname } = useLocation();
 
@@ -23,7 +21,6 @@ function App() {
       <Navbar />
       <AllRoutes />
       <Footer />
-   
     </div>
   );
 }

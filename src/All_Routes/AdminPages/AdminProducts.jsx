@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AdminPagination from "../../Components/Admin/Product/AdminPagination";
 import Row from "../../Components/Admin/Product/Row";
 import {
+  deleteProduct,
   editProducts,
   getProducts,
   getTotalProducts,
@@ -55,6 +56,18 @@ const AdminProducts = () => {
 
   const onChange = (val) => {
     setPage(val);
+  };
+
+  const handleDelete = async (id) => {
+    await dispatch(deleteProduct(id));
+    dispatch(getProducts({ page, sort, order }));
+    toast({
+      title: "Deleted Successfully",
+      description: "Product has successfully removed from the database.",
+      status: "info",
+      duration: 6000,
+      isClosable: true,
+    });
   };
 
   console.log(totalPages);
@@ -103,12 +116,18 @@ const AdminProducts = () => {
                   <Th>Brand</Th>
                   <Th>Name</Th>
                   <Th isNumeric>Price</Th>
+                  <Th>DELETE</Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {products.map((item) => {
                   return (
-                    <Row {...item} key={item.id} handleEdit={handleEdit} />
+                    <Row
+                      {...item}
+                      key={item.id}
+                      handleEdit={handleEdit}
+                      handleDelete={handleDelete}
+                    />
                   );
                 })}
               </Tbody>

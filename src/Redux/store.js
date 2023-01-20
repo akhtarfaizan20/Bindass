@@ -7,9 +7,11 @@ import {
 import { productReducer } from "./Products/products.reducer";
 import thunk from "redux-thunk";
 import { cartReducer } from "./Cart/cart.reducer";
+import { ordersReducer } from "./Orders/orders.reducer";
 const rootReducer = combineReducers({
   productManager: productReducer,
   cartManager: cartReducer,
+  ordersManager: ordersReducer,
 });
 
 export const store = legacy_createStore(
