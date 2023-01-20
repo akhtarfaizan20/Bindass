@@ -72,6 +72,28 @@ export const cartReducer = (state = initState, { type, payload }) => {
         error: false,
       };
     }
+
+    case types.ADD_CART_LOADING: {
+      return {
+        ...state,
+        loading: true,
+        error: false,
+      };
+    }
+    case types.ADD_CART_ERROR: {
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
+    }
+    case types.ADD_CART_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        error: false,
+      };
+    }
     default: {
       return state;
     }
