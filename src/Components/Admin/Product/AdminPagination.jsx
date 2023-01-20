@@ -7,7 +7,7 @@ const AdminPagination = ({ total, page, onChange }) => {
     <Box>
       <Button
         colorScheme={"gray"}
-        disabled={page === 1}
+        isDisabled={page === 1}
         onClick={() => onChange(page - 1)}
       >
         <AiOutlineLeft />
@@ -15,7 +15,7 @@ const AdminPagination = ({ total, page, onChange }) => {
       <Button>{page}</Button>
       <Button
         colorScheme={"gray"}
-        disabled={page === total}
+        isDisabled={page === total}
         onClick={() => onChange(page + 1)}
       >
         <AiOutlineRight />
