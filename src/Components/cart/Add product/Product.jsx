@@ -3,6 +3,7 @@ import "./product.css";
 // import Size from './size'
 
 const Product = (props) => {
+  console.log(props);
   const { desc, image, price, strickedoffprice } = props.product;
   const { handleRemove, id, qty, handleQtyChange } = props;
   let s = strickedoffprice.split(",").join("");

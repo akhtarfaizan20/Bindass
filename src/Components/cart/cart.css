@@ -1,8 +1,8 @@
 .main__container{
-    /* border:2px solid black; */
+
     height:auto;
     width:100%;
-    padding:5rem 12% 0 12%
+    padding:5rem 12% 5rem 12%
 }
 div>h2{
     margin-bottom: 1.5rem;
@@ -17,7 +17,7 @@ div>h2{
 /*--------------- selected item Box css ------------------- */
 .product__container{
     /* border:2px solid blue; */
-    height:80rem;
+    height:auto;
    
 }
 
@@ -134,4 +134,18 @@ div>h2{
     padding:0.8rem;
     color:white;
     border-radius: 5px;
+}
+
+/* ---------- media query -------------- */
+
+@media screen and (max-width:768px){
+    .main__container{
+        padding: 2rem;
+    }
+    .card__container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:1rem;
+        /* border:2px solid red; */
+    }
 }

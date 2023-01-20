@@ -12,13 +12,8 @@ import {
   getCartProducts,
 } from "../../Redux/Cart/cart.actions";
 
-// const getData = () => {
-//   return fetch(`http://localhost:8080/carts`).then((res) => res.json());
-// };
 
 const Cart = () => {
-  const [data, setData] = useState([]);
-
   const { loading, products, error } = useSelector(
     (store) => store.cartManager
   );

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ProductDiv.module.css";
 import { Box, Image, Badge } from "@chakra-ui/react";
 let dollarIndianLocale = Intl.NumberFormat("en-IN");
+import { AiOutlineStar} from "react-icons/ai";
 
 const ProductDiv = ({ data }) => {
   const { image, desc, price, strickedoffprice, ratings } = data;
@@ -16,8 +17,8 @@ const ProductDiv = ({ data }) => {
       textAlign={"left"}
     >
       <Image margin="auto" height="250px" src={image} alt={image} />
-      <Box display={"flex"} flexDirection={"row"} >
-        <Box width={"80%"} >
+      <Box display={"flex"} flexDirection={"row"}>
+        <Box width={"80%"}>
           <Box mt="1" as="p" lineHeight="tight" noOfLines={1} marginLeft="10px">
             {desc}
           </Box>
@@ -44,9 +45,23 @@ const ProductDiv = ({ data }) => {
               <s>{strickedoffprice}</s>
             </Box>
           </Box>
+          <Box display="flex" mt="2" alignItems="center">
+            {Array(5)
+              .fill("")
+              .map((_, i) => (
+                <AiOutlineStar
+                  key={i}
+                  color={i < ratings ? "teal.500" : "gray.300"}
+                />
+              ))}
+
+          </Box>
         </Box>
-        <Box >
-          <Image boxSize="30px" src="https://images.bewakoof.com/web/Wishlist.svg" />
+        <Box>
+          <Image
+            boxSize="30px"
+            src="https://images.bewakoof.com/web/Wishlist.svg"
+          />
         </Box>
       </Box>
     </Box>

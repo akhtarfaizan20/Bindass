@@ -1,111 +1,108 @@
-import React, { useState } from "react";
-import "./navbar.css";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
-
+import { ReactNode } from "react";
+import logo from "../../Images/logo.png";
 import { NavLink } from "react-router-dom";
-
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { AiFillHeart, AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiFillHeart,
+  AiOutlineSearch,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import LoginAuth from "./loginAuth";
-import logo from "../../Images/logo.png"
+import {
+  Box,
+  Flex,
+  HStack,
+  IconButton,
+  useDisclosure,
+  Stack,
+  Input, InputGroup, InputLeftElement
+  
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-const Navbar = () => {
-  const [showMediaIcons, setShowMediaIcons] = useState(false);
+export default function withAction() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+
   return (
     <>
-      <nav className="main-nav">
-        {/* 1st logo part  */}
-        <div className="logo">
-        <NavLink to="/">
-
-          <img src={logo} alt="" 
-          style={{
-            "width":"100px",
-            "marginTop":"-20px"
-          }}
+      <Box  px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <IconButton
+            size={"md"}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
           />
-        </NavLink>
-
-        </div>
-
-        {/* 2nd menu part  */}
-        <div
-          className={
-            showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
-          }
-        >
-          <ul>
-          <li>
-
-          <NavLink to="/products/men">Men</NavLink>
-            </li>
-            <li>
-              <NavLink to="/products/women">Women</NavLink>
-            </li>
-            <li>
-              <NavLink to="/">Mobile</NavLink>
-            </li>
-          </ul>
-        </div>
-
-        {/* 3rd social media links */}
-        <div className="social-media">
-          <ul className="social-media-desktop">
-          <li 
-            
-            style={{
-              "marginLeft":"-5em"
-            }}
-            >
-
-              <InputGroup
-              variant="filled"
-              size='lg'
-              >
-                <InputLeftElement
-                  pointerEvents="none"
-                  children={<AiOutlineSearch />}
+          <HStack spacing={8} alignItems={"center"}>
+            <Box>
+              <NavLink to="/">
+                <img
+                  src={logo}
+                  alt=""
+                  style={{
+                    width: "100px",
+                  }}
                 />
-                <Input type="tel"   focusBorderColor='black.400' placeholder="Search Product" />
-              </InputGroup>
-            </li>
-            <li><AiFillHeart/></li>
-           
-            <li>
-            <NavLink to="/cart">
-              
-              
-              <AiOutlineShoppingCart/>
               </NavLink>
-              </li>
-
-            <li>
-              <LoginAuth />
-            </li>
-          </ul>
-
-          {/* hamburget menu start  */}
-          <div className="hamburger-menu">
-            <LoginAuth />
-
-            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
-              <GiHamburgerMenu
+            </Box>
+            <HStack
+              as={"nav"}
+              spacing={4}
+              display={{ base: "none", md: "flex" }}
+            >
+              <NavLink to="/products/man">Men</NavLink>
+              <NavLink to="/products/women">Women</NavLink>
+              <NavLink to="/">Mobile Cover</NavLink>
+            </HStack>
+          </HStack>
+          <Flex alignItems={"center"}>
+            <InputGroup variant="filled" size="xs">
+              <InputLeftElement
+                pointerEvents="none"
+                children={<AiOutlineSearch />}
+              />
+              <Input
+                type="tel"
+                // focusBorderColor="black.400"
+                placeholder="Search Product"
+                border="1px"
+              />
+            </InputGroup>
+            <NavLink to="/cart">
+              <AiFillHeart
                 style={{
-                  marginTop: "20px",
-                  marginLeft: "20px",
+                  width: "50px",
+                  height: "40px",
                 }}
               />
-            </a>
-          </div>
-        </div>
-      </nav>
+            </NavLink>
+
+           
+
+            <NavLink to="/cart">
+              <AiOutlineShoppingCart
+                style={{
+                  width: "50px",
+                  height: "40px",
+                  "marginRight":'1em'
+                }}
+              />
+            </NavLink>
+            <LoginAuth />
+          </Flex>
+        </Flex>
+
+        {isOpen ? (
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
+      </Box>
     </>
   );
-};
-
-export default Navbar;
+}
