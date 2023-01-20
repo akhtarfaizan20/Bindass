@@ -16,20 +16,25 @@ import {
   VisuallyHidden,
   List,
   ListItem,
+  useToast,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleProducts } from "../Redux/SingleProduct/singleProduct.actions";
+import { addToCart } from "../Redux/Cart/cart.actions";
+import { useAuth0 } from "@auth0/auth0-react";
+let dollarIndianLocale = Intl.NumberFormat("en-IN");
 
 
 
 
 const ProductDetails = () => {
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const {id}= useParams()
   const dispatch =useDispatch()
-
+  const toast=useToast()
   const { loading, error, product  } = useSelector(
     (store) => store.singleProductManager
   );
@@ -40,6 +45,24 @@ const ProductDetails = () => {
   },[])
 
   console.log(product)
+   const {image, desc,brand, price, strickedoffprice, ratings}=product
+  const handleAddToCart=async()=>{
+    let item={
+      user:user.email,
+      product:product,
+      size:"M",
+      qty:1
+    }
+    await dispatch(addToCart(item))
+    toast({
+      title: 'Added to Cart',
+      description: "Item has successfully added to Cart",
+      status: 'success',
+      duration: 6000,
+      isClosable: true,
+    })
+
+  }
   
   return (
 
@@ -53,9 +76,7 @@ const ProductDetails = () => {
             <Image
               rounded={"md"}
               alt={"product image"}
-              src={
-                "https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080"
-              }
+              src={image}
               fit={"cover"}
               align={"center"}
               w={"100%"}
@@ -69,14 +90,21 @@ const ProductDetails = () => {
                 fontWeight={600}
                 fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
               >
-                {id}
+                {brand}
               </Heading>
               <Text
                 color={useColorModeValue("gray.900", "gray.400")}
                 fontWeight={300}
                 fontSize={"2xl"}
               >
-                $350.00 USD
+                ₹{dollarIndianLocale.format(price)}
+              </Text>
+              <Text
+                color={useColorModeValue("gray.900", "gray.400")}
+                fontWeight={300}
+                fontSize={"2xl"}
+              >
+                <s>{strickedoffprice}</s>
               </Text>
             </Box>
 
@@ -90,19 +118,8 @@ const ProductDetails = () => {
               }
             >
               <VStack spacing={{ base: 4, sm: 6 }}>
-                <Text
-                  color={useColorModeValue("gray.500", "gray.400")}
-                  fontSize={"2xl"}
-                  fontWeight={"300"}
-                >
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore
-                </Text>
                 <Text fontSize={"lg"}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                  maxime modi nam officiis porro, quae, quisquam quos
-                  reprehenderit velit? Natus, totam.
+                {desc}
                 </Text>
               </VStack>
               <Box>
@@ -118,74 +135,15 @@ const ProductDetails = () => {
 
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                   <List spacing={2}>
-                    <ListItem>Chronograph</ListItem>
-                    <ListItem>Master Chronometer Certified</ListItem>{" "}
-                    <ListItem>Tachymeter</ListItem>
+                    <ListItem>Ratings</ListItem>
                   </List>
                   <List spacing={2}>
-                    <ListItem>Anti‑magnetic</ListItem>
-                    <ListItem>Chronometer</ListItem>
-                    <ListItem>Small seconds</ListItem>
+                    <ListItem>{ratings}</ListItem>
+                  
                   </List>
                 </SimpleGrid>
               </Box>
-              <Box>
-                <Text
-                  fontSize={{ base: "16px", lg: "18px" }}
-                  color={useColorModeValue("yellow.500", "yellow.300")}
-                  fontWeight={"500"}
-                  textTransform={"uppercase"}
-                  mb={"4"}
-                >
-                  Product Details
-                </Text>
-
-                <List spacing={2}>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Between lugs:
-                    </Text>{" "}
-                    20 mm
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Bracelet:
-                    </Text>{" "}
-                    leather strap
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Case:
-                    </Text>{" "}
-                    Steel
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Case diameter:
-                    </Text>{" "}
-                    42 mm
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Dial color:
-                    </Text>{" "}
-                    Black
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Crystal:
-                    </Text>{" "}
-                    Domed, scratch‑resistant sapphire crystal with
-                    anti‑reflective treatment inside
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Water resistance:
-                    </Text>{" "}
-                    5 bar (50 metres / 167 feet){" "}
-                  </ListItem>
-                </List>
-              </Box>
+             
             </Stack>
 
             <Button
@@ -201,6 +159,7 @@ const ProductDetails = () => {
                 transform: "translateY(2px)",
                 boxShadow: "lg",
               }}
+              onClick={handleAddToCart}
             >
               Add to cart
             </Button>

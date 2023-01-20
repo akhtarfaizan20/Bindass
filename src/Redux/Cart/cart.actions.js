@@ -39,6 +39,8 @@ export const editCartItem = (id, qty) => (dispatch) => {
     });
 };
 
+
+
 export const addToCart = (item) => (dispatch) => {
   dispatch({ type: types.ADD_CART_LOADING });
   return axios
@@ -50,3 +52,4 @@ export const addToCart = (item) => (dispatch) => {
       dispatch({ type: types.ADD_CART_ERROR });
     });
 };
+
