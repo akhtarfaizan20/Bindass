@@ -99,7 +99,7 @@ const breakpoints2=[
 ]
 
   return (
-    <div>
+    <div className='Main'>
        <div style={{marginTop:"15px"}} className="mobile">
     <Carousel breakPoints={breakpoints2} enableSwipe={true} showArrows={false} pagination={false} >
        <Item3><Img className='mobileimg' src="https://images.bewakoof.com/nav_menu/mad-india-circle-icon-1673616489.png" alt="bewakoof"   /></Item3>
@@ -145,7 +145,7 @@ const breakpoints2=[
     </Carousel>
    
        </div>
-       <table>
+       <table style={{width:"95%",margin:"auto"}}>
       <tr>
         <td><Img src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-men-1674030025.jpg" alt="bewakoof"/></td>
         <td><Img src="https://images.bewakoof.com/uploads/grid/app/DOTW-Split-banner-Desktop-Women-1674030025.jpg" alt="bindass"/></td>
