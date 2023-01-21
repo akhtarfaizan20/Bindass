@@ -3392,24 +3392,24 @@
   ],
   "carts": [
     {
+      "user": "akhtarfaizan@gmail.com",
       "product": {
-        "image": "https://m.media-amazon.com/images/I/71pNnnaOIzS._AC_UL320_.jpg",
-        "url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-        "brand": "Lyned",
-        "desc": "Mens Cotton Half Sleeve Striped Polo T Shirt with Collar",
-        "desc_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-        "price": 569,
-        "price_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
+        "image": "https://m.media-amazon.com/images/I/51CyZP0d5GL._AC_UL320_.jpg",
+        "brand": "KOTTY",
+        "desc": "Womens High Rise Cotton Lycra Skinny Jeans",
+        "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+        "price": 499,
+        "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
         "ratings": 3.6,
-        "strickedoffprice": "₹2,499",
-        "strickedoffprice_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYnRmOjIwMDU4NzEwMjkyNzA4OjowOjo&url=%2FLyned-Branded-Striped-Tshirts-Men_Black17_L%2Fdp%2FB093XTSKZV%2Fref%3Dsr_1_60_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-60-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1",
-        "target": "men",
-        "category": "t-shirt",
-        "id": 1
+        "strickedoffprice": "₹1,999",
+        "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+        "target": "women",
+        "category": "jeans",
+        "id": 129
       },
-      "id": 1,
-      "qty": 5,
-      "user": "akhtarfaizan20@gmail.com"
+      "size": "M",
+      "qty": 4,
+      "id": 2
     }
   ],
   "users": [
@@ -3463,7 +3463,74 @@
         }
       ],
       "date": 1674216196233,
-      "status": "Pending"
+      "status": "Confirmed"
+    },
+    {
+      "user": "akhtarfaizan20@gmail.com",
+      "products": [
+        {
+          "product": {
+            "image": "https://m.media-amazon.com/images/I/51CyZP0d5GL._AC_UL320_.jpg",
+            "brand": "KOTTY",
+            "desc": "Womens High Rise Cotton Lycra Skinny Jeans",
+            "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+            "price": 499,
+            "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+            "ratings": 3.6,
+            "strickedoffprice": "₹1,999",
+            "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+            "target": "women",
+            "category": "jeans",
+            "id": 129
+          },
+          "qty": 2
+        },
+        {
+          "product": {
+            "image": "https://m.media-amazon.com/images/I/51QJAwzSMFL._AC_UL320_.jpg",
+            "brand": "AKA CHIC",
+            "desc": "Women's Regular Jeans",
+            "desc_url": "https://www.amazon.in/AKA-CHIC-Womens-AKCB-1430_Black_28/dp/B07W5D9QYH/ref=sr_1_30?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-30",
+            "price": 899,
+            "price_url": "https://www.amazon.in/AKA-CHIC-Womens-AKCB-1430_Black_28/dp/B07W5D9QYH/ref=sr_1_30?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-30",
+            "ratings": 4.1,
+            "strickedoffprice": "₹2,399",
+            "strickedoffprice_url": "https://www.amazon.in/AKA-CHIC-Womens-AKCB-1430_Black_28/dp/B07W5D9QYH/ref=sr_1_30?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-30",
+            "target": "women",
+            "category": "jeans",
+            "id": 130
+          },
+          "qty": 1
+        }
+      ],
+      "date": 1674240835107,
+      "status": "Pending",
+      "id": 2
+    },
+    {
+      "user": "akhtarfaizan20@gmail.com",
+      "products": [
+        {
+          "product": {
+            "image": "https://m.media-amazon.com/images/I/614VIvSFzvL._AC_UL320_.jpg",
+            "brand": "Pepe Jeans",
+            "desc": "Women's Regular Fit Jeans",
+            "desc_url": "https://www.amazon.in/Pepe-Jeans-Women-Blue/dp/B07MPC1QZX/ref=sr_1_40?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-40",
+            "price": 2449,
+            "price_url": "https://www.amazon.in/Pepe-Jeans-Women-Blue/dp/B07MPC1QZX/ref=sr_1_40?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-40",
+            "ratings": 4.1,
+            "strickedoffprice": "₹4,999",
+            "strickedoffprice_url": "https://www.amazon.in/Pepe-Jeans-Women-Blue/dp/B07MPC1QZX/ref=sr_1_40?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-40",
+            "target": "women",
+            "category": "jeans",
+            "id": 137
+          },
+          "qty": 1
+        }
+      ],
+      "date": 1674240910334,
+      "status": "Pending",
+      "id": 3
     }
   ]
 }

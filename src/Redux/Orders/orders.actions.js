@@ -67,3 +67,17 @@ export const deleteOrders = (id) => (dispatch) => {
       dispatch({ type: types.DELETE_ORDERS_SUCCESS });
     });
 };
+
+export const addOrders = (item) => (dispatch) => {
+  dispatch({ type: types.ADD_ORDERS_LOADING });
+  return axios
+    .post(`http://localhost:8080/orders`, item)
+    .then((res) => {
+      dispatch({
+        type: types.ADD_ORDERS_SUCCESS,
+      });
+    })
+    .catch(() => {
+      dispatch({ type: types.ADD_ORDERS_SUCCESS });
+    });
+};

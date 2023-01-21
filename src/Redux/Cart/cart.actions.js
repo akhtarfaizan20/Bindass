@@ -1,10 +1,10 @@
 import axios from "axios";
 import * as types from "./cart.types";
 
-export const getCartProducts = () => (dispatch) => {
+export const getCartProducts = (email) => (dispatch) => {
   dispatch({ type: types.GET_CART_LOADING });
   return axios
-    .get(`http://localhost:8080/carts`)
+    .get(`http://localhost:8080/carts?user=${email}`)
     .then((res) => {
       dispatch({ type: types.GET_CART_SUCCESS, payload: res.data });
     })
@@ -25,21 +25,22 @@ export const deleteItemFromCart = (id) => (dispatch) => {
     });
 };
 
-export const editCartItem = (id, qty) => (dispatch) => {
-  dispatch({ type: types.EDIT_CART_LOADING });
-  return axios
-    .patch(`http://localhost:8080/carts/${id}`, {
-      qty: +qty,
-    })
-    .then(() => {
-      dispatch({ type: types.EDIT_CART_SUCCESS });
-    })
-    .catch(() => {
-      dispatch({ type: types.EDIT_CART_ERROR });
-    });
-};
-
-
+export const editCartItem =
+  ({ id, qty, size }) =>
+  (dispatch) => {
+    dispatch({ type: types.EDIT_CART_LOADING });
+    return axios
+      .patch(`http://localhost:8080/carts/${id}`, {
+        qty: qty ? +qty : undefined,
+        size,
+      })
+      .then(() => {
+        dispatch({ type: types.EDIT_CART_SUCCESS });
+      })
+      .catch(() => {
+        dispatch({ type: types.EDIT_CART_ERROR });
+      });
+  };
 
 export const addToCart = (item) => (dispatch) => {
   dispatch({ type: types.ADD_CART_LOADING });
@@ -52,4 +53,3 @@ export const addToCart = (item) => (dispatch) => {
       dispatch({ type: types.ADD_CART_ERROR });
     });
 };
-

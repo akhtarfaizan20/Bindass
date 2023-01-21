@@ -74,6 +74,27 @@ export const ordersReducer = (state = initState, { type, payload }) => {
         error: false,
       };
     }
+    case types.ADD_ORDERS_LOADING: {
+      return {
+        ...state,
+        loading: true,
+        error: false,
+      };
+    }
+    case types.ADD_ORDERS_ERROR: {
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
+    }
+    case types.ADD_ORDERS_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        error: false,
+      };
+    }
     default: {
       return state;
     }
