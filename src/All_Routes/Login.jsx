@@ -50,7 +50,7 @@ function Login() {
         boxShadow={'lg'}
         p={6}
         my={12}>
-        <Heading lineHeight={1.1} fontSize={{ base: '2xl', md: '3xl' }}>
+        <Heading lineHeight={1.1} ml={150} fontSize={{ base: '2xl', md: '3xl' }}>
           Admin Form
         </Heading>
         <FormControl id="email" isRequired>
