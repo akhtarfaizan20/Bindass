@@ -153,6 +153,14 @@ const ProductDetails = () => {
                 })
               }
             </Grid>
+            <Text
+                fontSize={{ base: "16px", lg: "18px" }}
+                color={useColorModeValue("teal.500", "teal.300")}
+                py={2}
+                mb={"3"}
+              >
+                Cloths size {size} selected
+              </Text>
           </Box>
 
           <Stack

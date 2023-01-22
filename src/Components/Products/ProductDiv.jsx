@@ -26,7 +26,7 @@ const ProductDiv = ({ data }) => {
           </Box>
           <Box marginLeft="6px">
             <Box marginLeft="4px" as="span" color="gray.600" fontSize="sm">
-              Price:
+            Discount Price :
             </Box>
             <Box marginLeft="4px" as="span" color="gray.600" fontSize="sm">
               ₹{dollarIndianLocale.format(price)}
@@ -41,7 +41,7 @@ const ProductDiv = ({ data }) => {
               color="gray.600"
               fontSize="sm"
             >
-              Discount Price :
+              Actual Price :
             </Box>
             <Box as="span" color="gray.600" fontSize="sm">
               <s>{strickedoffprice}</s>
