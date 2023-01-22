@@ -14,18 +14,18 @@ import {
   IconButton,
   useDisclosure,
   Stack,
-  Input, InputGroup, InputLeftElement
-  
+  Input,
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function withAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-
   return (
     <>
-      <Box  px={4}>
+      <Box px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -54,27 +54,27 @@ export default function withAction() {
               <NavLink to="/products/man">Men</NavLink>
               <NavLink to="/products/women">Women</NavLink>
               <NavLink to="/">Mobile </NavLink>
-              <InputGroup variant="filled" size="xs" 
-              style={{
-                "marginLeft":"5em"
-              }}
+              <InputGroup
+                variant="filled"
+                size="xs"
+                style={{
+                  marginLeft: "5em",
+                }}
               >
-              <InputLeftElement
-                pointerEvents="none"
-                children={<AiOutlineSearch />}
-                
-              />
-              <Input
-                type="tel"
-                // focusBorderColor="black.400"
-                placeholder="Search Product"
-                border="1px"
-              />
-            </InputGroup>
+                <InputLeftElement
+                  pointerEvents="none"
+                  children={<AiOutlineSearch />}
+                />
+                <Input
+                  type="tel"
+                  // focusBorderColor="black.400"
+                  placeholder="Search Product"
+                  border="1px"
+                />
+              </InputGroup>
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            
             <NavLink to="/cart">
               <AiFillHeart
                 style={{
@@ -84,14 +84,12 @@ export default function withAction() {
               />
             </NavLink>
 
-           
-
             <NavLink to="/cart">
               <AiOutlineShoppingCart
                 style={{
                   width: "50px",
                   height: "40px",
-                  "marginRight":'1em'
+                  marginRight: "1em",
                 }}
               />
             </NavLink>
@@ -103,7 +101,9 @@ export default function withAction() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} to={`/products/${link}`}>
+                  {link}
+                </NavLink>
               ))}
             </Stack>
           </Box>
@@ -112,3 +112,5 @@ export default function withAction() {
     </>
   );
 }
+
+const Links = ["men", "women"];
