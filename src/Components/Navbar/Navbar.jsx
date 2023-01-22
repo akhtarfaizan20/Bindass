@@ -6,6 +6,10 @@ import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+
+import { BsBag } from "react-icons/bs";
+import { CiHeart } from "react-icons/ci";
+
 import LoginAuth from "./loginAuth";
 import {
   Box,
@@ -25,8 +29,9 @@ export default function withAction() {
 
   return (
     <>
-      <Box px={4} id={"top"}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"} w={"80%"} margin={"auto"}>
+
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -54,46 +59,54 @@ export default function withAction() {
               <NavLink to="/products/man">Men</NavLink>
               <NavLink to="/products/women">Women</NavLink>
               <NavLink to="/">Mobile </NavLink>
-              <InputGroup
+              
+            </HStack>
+          </HStack>
+          <Flex alignItems={"center"} gap={"1rem"}>
+          <InputGroup
                 variant="filled"
-                size="xs"
+                size="sm"
                 style={{
-                  marginLeft: "5em",
+                  // marginLeft: "5em",
+                  width:"15rem",
+                  borderRadius:"15px",
+                  marginRight:"2rem"
                 }}
               >
                 <InputLeftElement
+                
                   pointerEvents="none"
-                  children={<AiOutlineSearch />}
+                  children={<AiOutlineSearch  />}
                 />
-                <Input
+                <Input  
+               
                   type="tel"
                   // focusBorderColor="black.400"
                   placeholder="Search Product"
                   border="1px"
                 />
               </InputGroup>
-            </HStack>
-          </HStack>
-          <Flex alignItems={"center"}>
+              <LoginAuth />
             <NavLink to="/cart">
-              <AiFillHeart
+            
+              <CiHeart
                 style={{
-                  width: "50px",
-                  height: "40px",
+                  width: "40px",
+                  height: "42px",
                 }}
               />
             </NavLink>
 
             <NavLink to="/cart">
-              <AiOutlineShoppingCart
+              <BsBag
                 style={{
                   width: "50px",
-                  height: "40px",
+                  height: "28px",
                   marginRight: "1em",
                 }}
               />
             </NavLink>
-            <LoginAuth />
+            {/* <LoginAuth /> */}
           </Flex>
         </Flex>
 

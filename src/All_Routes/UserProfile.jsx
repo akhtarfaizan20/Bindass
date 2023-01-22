@@ -10,9 +10,11 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import AdminPagination from "../Components/Admin/Product/AdminPagination";
 import Orders from "../Components/Profile/Orders";
 import { getOrders, getTotalOrders } from "../Redux/Orders/orders.actions";
+
 import styles from "./Products.module.css";
 
 const UserProfile = () => {
