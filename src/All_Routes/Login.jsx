@@ -74,7 +74,7 @@ function Login() {
 
         {user.email === "Bindass@gmail.com" ?
         (<Stack spacing={6}>
-                  <NavLink to="/">
+                  <NavLink to="/admin">
 
           <Button
             bg={'blue.400'}
