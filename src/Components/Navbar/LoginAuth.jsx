@@ -14,13 +14,17 @@ import {
   PopoverContent,
   PopoverBody,
   keyframes,
+  Text,
 } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { AiOutlineUser } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function LoginAuth() {
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const size = "45px";
   const color = "teal";
+  const navigate = useNavigate();
 
   const pulseRing = keyframes`
     0% {
@@ -38,7 +42,9 @@ function LoginAuth() {
   return (
     <div>
       {!isAuthenticated ? (
-        <Button onClick={() => loginWithRedirect()}>SignIn</Button>
+        <Text onClick={() => loginWithRedirect()} fontSize={"35px"}>
+          <AiOutlineUser />
+        </Text>
       ) : null}
 
       {isAuthenticated && (
@@ -130,22 +136,34 @@ function LoginAuth() {
                           </Heading>
                         </Stack>
 
-                        <Button
-                          w={"full"}
-                          mt={8}
-                          bg={useColorModeValue("#151f21", "gray.900")}
-                          color={"white"}
-                          rounded={"md"}
-                          onClick={() =>
-                            logout({ returnTo: window.location.origin })
-                          }
-                          _hover={{
-                            transform: "translateY(-2px)",
-                            boxShadow: "lg",
-                          }}
-                        >
-                          LogOut
-                        </Button>
+                        <Flex justifyContent={"space-around"} pb={"10px"}>
+                          <Button
+                            onClick={() => navigate("/user-profile")}
+                            w={"fit-content"}
+                            bg={useColorModeValue("#151f21", "gray.900")}
+                            _hover={{
+                              transform: "translateY(-2px)",
+                              boxShadow: "lg",
+                            }}
+                            color={"white"}
+                          >
+                            Your Profile
+                          </Button>
+                          <Button
+                            w={"fit-content"}
+                            bg={useColorModeValue("#151f21", "gray.900")}
+                            color={"white"}
+                            onClick={() =>
+                              logout({ returnTo: window.location.origin })
+                            }
+                            _hover={{
+                              transform: "translateY(-2px)",
+                              boxShadow: "lg",
+                            }}
+                          >
+                            Logout
+                          </Button>
+                        </Flex>
                       </Box>
                     </Box>
                   </Center>

@@ -3,6 +3,7 @@ import logo from "../../Images/logo.png";
 import { NavLink } from "react-router-dom";
 import {
   AiFillHeart,
+  AiOutlineHeart,
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
@@ -21,6 +22,9 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Image,
+  useBreakpointValue,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
@@ -29,9 +33,23 @@ export default function withAction() {
 
   return (
     <>
-      <Box px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"} w={"80%"} margin={"auto"}>
-
+      <Box
+        px={4}
+        py={1}
+        // borderTop={"1px solid #ccc"}
+        borderBottom={"1px solid #ccc"}
+        position={"fixed"}
+        w={"100%"}
+        zIndex={"999"}
+        backgroundColor={"white"}
+      >
+        <Flex
+          h={16}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          w={useBreakpointValue({ base: "100%", lg: "80%" })}
+          margin={"auto"}
+        >
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -42,12 +60,10 @@ export default function withAction() {
           <HStack spacing={8} alignItems={"center"}>
             <Box>
               <NavLink to="/">
-                <img
+                <Image
                   src={logo}
                   alt=""
-                  style={{
-                    width: "100px",
-                  }}
+                  w={useBreakpointValue({ base: "80px", lg: "150px" })}
                 />
               </NavLink>
             </Box>
@@ -55,56 +71,45 @@ export default function withAction() {
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
+              fontSize={"20px"}
             >
-              <NavLink to="/products/man">Men</NavLink>
+              <NavLink to="/products/men">Men</NavLink>
               <NavLink to="/products/women">Women</NavLink>
               <NavLink to="/">Mobile </NavLink>
-              
             </HStack>
           </HStack>
           <Flex alignItems={"center"} gap={"1rem"}>
-          <InputGroup
-                variant="filled"
-                size="sm"
-                style={{
-                  // marginLeft: "5em",
-                  width:"15rem",
-                  borderRadius:"15px",
-                  marginRight:"2rem"
-                }}
-              >
-                <InputLeftElement
-                
-                  pointerEvents="none"
-                  children={<AiOutlineSearch  />}
-                />
-                <Input  
-               
-                  type="tel"
-                  // focusBorderColor="black.400"
-                  placeholder="Search Product"
-                  border="1px"
-                />
-              </InputGroup>
-              <LoginAuth />
-            <NavLink to="/cart">
-            
-              <CiHeart
-                style={{
-                  width: "40px",
-                  height: "42px",
-                }}
+            <InputGroup
+              w={"370px"}
+              mt={2}
+              display={useBreakpointValue({ base: "none", md: "solid" })}
+            >
+              <InputLeftElement
+                py={"20px"}
+                pointerEvents="none"
+                children={
+                  <AiOutlineSearch color="gray.300" fontSize={"20px"} />
+                }
               />
+              <Input
+                py={"20px"}
+                type="tel"
+                placeholder="Search by product, category or collection"
+                focusBorderColor="gray.400"
+                variant={"filled"}
+              />
+            </InputGroup>
+            <LoginAuth />
+            <NavLink to="/cart">
+              <Text fontSize={"35px"}>
+                <AiOutlineHeart />
+              </Text>
             </NavLink>
 
             <NavLink to="/cart">
-              <BsBag
-                style={{
-                  width: "50px",
-                  height: "28px",
-                  marginRight: "1em",
-                }}
-              />
+              <Text fontSize={"30px"}>
+                <AiOutlineShoppingCart />
+              </Text>
             </NavLink>
             {/* <LoginAuth /> */}
           </Flex>
@@ -114,8 +119,14 @@ export default function withAction() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link} to={`/products/${link}`}>
-                  {link}
+                <NavLink
+                  key={link.url}
+                  to={`/products/${link.url}`}
+                  onClick={() => {
+                    onClose();
+                  }}
+                >
+                  {link.title}
                 </NavLink>
               ))}
             </Stack>
@@ -126,4 +137,7 @@ export default function withAction() {
   );
 }
 
-const Links = ["men", "women"];
+const Links = [
+  { url: "men", title: "Mens" },
+  { url: "women", title: "Womens" },
+];
