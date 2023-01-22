@@ -1,5 +1,5 @@
 .main__container{
-
+    /* border: 1px solid red; */
     height:auto;
     width:100%;
     padding:5rem 12% 5rem 12%
@@ -47,7 +47,7 @@ div>h2{
 /*-------------- product informatin Box css----------------- */
 .info__container{
     /* border:2px solid yellow; */
-    height:80rem;
+    height:auto;
 }
 
 .box1{

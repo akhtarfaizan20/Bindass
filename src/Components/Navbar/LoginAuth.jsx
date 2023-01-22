@@ -14,7 +14,6 @@ import {
   PopoverContent,
   PopoverBody,
   keyframes,
-
 } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -35,7 +34,6 @@ function LoginAuth() {
       opacity: 0;
     }
     `;
-
 
   return (
     <div>
@@ -82,13 +80,11 @@ function LoginAuth() {
                   />
                 </Box>
               </Flex>
-
             </PopoverTrigger>
             <PopoverContent _focus={{ boxShadown: "none" }}>
               <PopoverBody w="full">
                 {isAuthenticated && (
                   <Center>
-
                     <Box
                       maxW={"270px"}
                       w={"full"}
@@ -116,7 +112,6 @@ function LoginAuth() {
                       </Flex>
 
                       <Box>
-
                         <Stack spacing={0} align={"center"} mb={5}>
                           <Heading
                             fontSize={"2xl"}
@@ -126,7 +121,6 @@ function LoginAuth() {
                             {user.name}
                           </Heading>
 
-
                           <Heading
                             fontSize={"sm"}
                             fontWeight={500}
@@ -134,7 +128,6 @@ function LoginAuth() {
                           >
                             {user.email}
                           </Heading>
-
                         </Stack>
 
                         <Button

@@ -1,3 +1,4 @@
+
 .items{
    display: grid;
    grid-template-columns: repeat(6,16.5%);
@@ -17,9 +18,10 @@
 .items3{
   display: grid;
   grid-template-columns:repeat(6,17%);
-  width: 100%;
+  width: 95%;
   height: auto;
   margin: auto;
+  padding: 15px;
 }
 .images{
   width:100%;
@@ -29,30 +31,33 @@
   display: none;
  }
 @media screen and (max-width:720px){
+ 
     .items{
         display: grid;
         grid-template-columns: repeat(3,30%);
-        width: 100%;
+        width: 95%;
    height: auto;
-   margin: 2px;
- 
+   margin: auto;
+   padding: 5px;
        
      }
      .items2{
       display: grid;
       grid-template-columns:100%;
-      width: 100%;
+      width: 95%;
       justify-content: center;
       align-items: center;
       height: auto;
+      padding: 5px;
     }
     .items3{
       display: grid;
       grid-template-columns:repeat(3,31%);
       justify-content: center;
       align-items: center;
-      width: 100%;
+      width: 95%;
       height: auto;
+      padding: 5px;
       margin: auto;
     }
      .carouselsm{
@@ -60,8 +65,11 @@
       height: auto;
      }
      .images{
-      width:100%;
+      width:98%;
       height:auto;
+     padding: 5px;
+     margin: auto;
+
      }
      .mobile{
       display: block;

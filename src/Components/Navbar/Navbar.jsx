@@ -53,14 +53,16 @@ export default function withAction() {
             >
               <NavLink to="/products/man">Men</NavLink>
               <NavLink to="/products/women">Women</NavLink>
-              <NavLink to="/">Mobile Cover</NavLink>
-            </HStack>
-          </HStack>
-          <Flex alignItems={"center"}>
-            <InputGroup variant="filled" size="xs">
+              <NavLink to="/">Mobile </NavLink>
+              <InputGroup variant="filled" size="xs" 
+              style={{
+                "marginLeft":"5em"
+              }}
+              >
               <InputLeftElement
                 pointerEvents="none"
                 children={<AiOutlineSearch />}
+                
               />
               <Input
                 type="tel"
@@ -69,6 +71,10 @@ export default function withAction() {
                 border="1px"
               />
             </InputGroup>
+            </HStack>
+          </HStack>
+          <Flex alignItems={"center"}>
+            
             <NavLink to="/cart">
               <AiFillHeart
                 style={{
