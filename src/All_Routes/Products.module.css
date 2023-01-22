@@ -50,7 +50,8 @@
 .proMainSec {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: auto;
+  justify-content: center;
   /* border: 1px solid red; */
   height: auto;
 }
@@ -58,8 +59,10 @@
 .proSortSec {
   font-size: 12px;
   color: gray;
-  padding: 2rem;
-  margin-top: 1rem;
+  padding: 1rem;
+  /* margin-top: 1rem; */
+  /* border: 1px solid red; */
+
 }
 .productMain {
   display: grid;
@@ -87,6 +90,7 @@
         display: grid;
         grid-template-rows: repeat(12, auto);
         grid-template-columns: repeat(1, 250px);
+        justify-content: center;
         gap: 2rem;
         /* border: 1px solid blue; */
         text-align: center;
