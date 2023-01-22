@@ -16,12 +16,17 @@ import {
 import { NavLink, useNavigate } from "react-router-dom";
 function Login() {
   var navigate = useNavigate();
-  const [user, setUser] = useState({ email: "", password: "" });
+  const [user, setUser] = useState({
+    email: "admin@bindass.com",
+    password: "bindass",
+  });
 
-  const onsubmit = () => {
-    // console.log("fuck");
-    if (user.email === "Bindass") {
-      return <navigate to="/" />;
+  const onsubmit = (e) => {
+    // console.log(user);
+    if (user.email === "admin@bindass.com") {
+      if (user.password === "bindass") {
+        navigate("/admin");
+      }
     }
   };
 
@@ -31,69 +36,69 @@ function Login() {
   };
 
   return (
-    <div
- 
-    >
+    <div>
+      <Flex
+        minH={"100vh"}
+        align={"center"}
+        justify={"center"}
+        bg={useColorModeValue("gray.50", "gray.800")}
+      >
+        <Stack
+          spacing={4}
+          w={"full"}
+          maxW={"md"}
+          bg={useColorModeValue("white", "gray.700")}
+          rounded={"xl"}
+          boxShadow={"lg"}
+          p={6}
+          my={12}
+        >
+          <Heading
+            lineHeight={1.1}
+            ml={150}
+            fontSize={{ base: "2xl", md: "3xl" }}
+          >
+            Admin Form
+          </Heading>
+          <FormControl id="email" isRequired>
+            <FormLabel>Email address</FormLabel>
+            <Input
+              placeholder="Enter email"
+              _placeholder={{ color: "gray.500" }}
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={user.email}
+            />
+          </FormControl>
+          <FormControl id="password" isRequired>
+            <FormLabel>Password</FormLabel>
+            <Input
+              type="password"
+              name="password"
+              placeholder="Enter Passward"
+              onChange={handleChange}
+              value={user.password}
+            />
+          </FormControl>
 
-
-<Flex
-      minH={'100vh'}
-      align={'center'}
-      justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack
-        spacing={4}
-        w={'full'}
-        maxW={'md'}
-        bg={useColorModeValue('white', 'gray.700')}
-        rounded={'xl'}
-        boxShadow={'lg'}
-        p={6}
-        my={12}>
-        <Heading lineHeight={1.1} ml={150} fontSize={{ base: '2xl', md: '3xl' }}>
-          Admin Form
-        </Heading>
-        <FormControl id="email" isRequired>
-          <FormLabel>Email address</FormLabel>
-          <Input
-            placeholder="Enter email"
-            _placeholder={{ color: 'gray.500' }}
-            type="email"
-            name="email" onChange={handleChange}
-          />
-        </FormControl>
-        <FormControl id="password" isRequired>
-          <FormLabel>Password</FormLabel>
-          <Input type="password" 
-          name="password"
-          placeholder="Enter Passward"
-
-          onChange={handleChange}
-          />
-        </FormControl>
-
-        {user.email === "Bindass@gmail.com" ?
-        (<Stack spacing={6}>
-                  <NavLink to="/admin">
-
-          <Button
-            bg={'blue.400'}
-            color={'white'}
-            ml={210}
-            _hover={{
-              bg: 'blue.500',
-            }}>
-            Submit
-          </Button>
-          </NavLink>
-
-        </Stack>):null
-      }
-        
-      </Stack>
-    </Flex>
-
-
+          {user.email === "admin@bindass.com" && user.password === "bindass" ? (
+            <Stack spacing={6}>
+              <Button
+                bg={"blue.400"}
+                color={"white"}
+                ml={210}
+                _hover={{
+                  bg: "blue.500",
+                }}
+                onClick={(e) => onsubmit(e)}
+              >
+                Submit
+              </Button>
+            </Stack>
+          ) : null}
+        </Stack>
+      </Flex>
 
       {/* <Flex
         minH={"100vh"}
