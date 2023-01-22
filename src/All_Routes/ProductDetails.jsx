@@ -19,6 +19,7 @@ import {
   useToast,
   GridItem,
   Grid,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
@@ -48,20 +49,34 @@ const ProductDetails = () => {
   console.log(product);
   const { image, desc, brand, price, strickedoffprice, ratings } = product;
   const handleAddToCart = async () => {
-    let item = {
-      user: user.email,
-      product: product,
-      size: size,
-      qty: 1,
-    };
-    await dispatch(addToCart(item));
-    toast({
-      title: "Added to Cart",
-      description: "Item has successfully added to Cart",
-      status: "success",
-      duration: 6000,
-      isClosable: true,
-    });
+    if(isAuthenticated){
+      let item = {
+        user: user.email,
+        product: product,
+        size: size,
+        qty: 1,
+      };
+      await dispatch(addToCart(item));
+      toast({
+        title: "Added to Cart",
+        description: "Item has successfully added to Cart",
+        status: "success",
+        duration: 6000,
+        isClosable: true,
+        position:"top",
+
+      });
+    }else{
+      toast({
+        title: "Please, Sign in first",
+        position:"top",
+        description: "Kindly sign in to your account to add product in your cart.",
+        status: "info",
+        duration: 6000,
+        isClosable: true,
+      });
+    }
+  
   };
 
   return (
@@ -131,7 +146,7 @@ const ProductDetails = () => {
               Select Size
             </Text>
             <br />
-            <Grid width={"80%"} templateColumns="repeat(7, 1fr)" gap={"20px"}  >
+            <Grid width={"80%"} templateColumns={useBreakpointValue({base:"repeat(3,1fr)", md:"repeat(7,1fr)"}) }gap={"20px"}  >
               {
                 sizes.map((item)=>{
                   return <Flex key={item} border={size===item?"2px solid black":"1px solid #ddd"} h={"50px"} justifyContent={"center"} alignItems={"center"} onClick={()=>setSize(item)} >{item}</Flex>
