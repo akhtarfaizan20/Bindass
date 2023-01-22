@@ -1,6 +1,8 @@
 import {
+  Box,
   Button,
   Flex,
+  Heading,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -8,15 +10,14 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
-  Td,
-  Tr,
+  Text,
+  useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import OrderModalCard from "./OrderModalCard";
+import OrderModalCard from "../Admin/Orders/OrderModalCard";
 
-const OrderRows = ({ id, date, user, products, status, handleStatus }) => {
+const Orders = ({ id, date, products, status, ...rest }) => {
   let dollarIndianLocale = Intl.NumberFormat("en-IN");
   const { isOpen, onOpen, onClose } = useDisclosure();
   let d = new Date(date);
@@ -26,30 +27,37 @@ const OrderRows = ({ id, date, user, products, status, handleStatus }) => {
     sum += products[i].qty * products[i].product.price;
   }
   return (
-    <>
-      <Tr>
-        <Td>{id}</Td>
-        <Td>{day}</Td>
-        <Td>{user}</Td>
-        <Td isNumeric>{products.length}</Td>
-        <Td isNumeric>₹{dollarIndianLocale.format(sum)}/-</Td>
-        <Td>
-          <Button onClick={onOpen}>Show Details</Button>
-        </Td>
-        <Td>
-          <Select
-            value={status}
-            onChange={(e) => handleStatus(id, e.target.value)}
-            border={"1px solid gray"}
-          >
-            <option value="Pending">Pending</option>
-            <option value="Confirmed">Confirmed</option>
-            <option value="Dispatched">Dispatched</option>
-            <option value="On the Way">On the way</option>
-            <option value="Delevered">Delivered</option>
-          </Select>
-        </Td>
-      </Tr>
+    <Flex
+      direction={"column"}
+      p={"10px"}
+      border={"1px solid #ddd"}
+      w={useBreakpointValue({ md: "50%", base: "100%" })}
+      m={"auto"}
+      my={"10px"}
+    >
+      <Text as={"b"} color={"gray.600"}>
+        Order ID: {id}
+      </Text>
+      <Text as={"b"} color={"gray.600"}>
+        Date: {day}
+      </Text>
+      <Text as={"b"} color={"gray.600"}>
+        Total Amount: ₹{dollarIndianLocale.format(sum)}/-
+      </Text>
+      <Text as={"b"} color={"gray.600"}>
+        No. of items: {products.length}
+      </Text>
+      <Text as={"b"} color={"#84cc16"}>
+        Status: {status}
+      </Text>
+      <Button
+        w={"fit-content"}
+        onClick={onOpen}
+        variant={"outline"}
+        colorScheme={"blue"}
+      >
+        Show Details
+      </Button>
       <Modal isOpen={isOpen} onClose={onClose} scrollBehavior={"inside"}>
         <ModalOverlay />
         <ModalContent>
@@ -70,8 +78,8 @@ const OrderRows = ({ id, date, user, products, status, handleStatus }) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Flex>
   );
 };
 
-export default OrderRows;
+export default Orders;

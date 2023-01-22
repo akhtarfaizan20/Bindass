@@ -2,7 +2,7 @@ import axios from "axios";
 import * as types from "./orders.types";
 
 export const getOrders =
-  ({ page = 1, limit = 5 }) =>
+  ({ page = 1, limit = 5, user }) =>
   (dispatch) => {
     dispatch({ type: types.GET_ORDERS_LOADING });
 
@@ -11,6 +11,7 @@ export const getOrders =
         params: {
           _page: page,
           _limit: limit,
+          user,
         },
       })
       .then((res) => {
@@ -22,11 +23,15 @@ export const getOrders =
   };
 
 export const getTotalOrders =
-  (limit = 5) =>
+  ({ limit = 5, user }) =>
   (dispatch) => {
     dispatch({ type: types.GET_TOTAL_ORDERS_LOADING });
     return axios
-      .get(`http://localhost:8080/orders`)
+      .get(`http://localhost:8080/orders`, {
+        params: {
+          user,
+        },
+      })
       .then((res) => {
         dispatch({
           type: types.GET_TOTAL_ORDERS_SUCCESS,
@@ -65,5 +70,19 @@ export const deleteOrders = (id) => (dispatch) => {
     })
     .catch(() => {
       dispatch({ type: types.DELETE_ORDERS_SUCCESS });
+    });
+};
+
+export const addOrders = (item) => (dispatch) => {
+  dispatch({ type: types.ADD_ORDERS_LOADING });
+  return axios
+    .post(`http://localhost:8080/orders`, item)
+    .then((res) => {
+      dispatch({
+        type: types.ADD_ORDERS_SUCCESS,
+      });
+    })
+    .catch(() => {
+      dispatch({ type: types.ADD_ORDERS_SUCCESS });
     });
 };

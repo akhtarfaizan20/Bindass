@@ -6,6 +6,10 @@ import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+
+import { BsBag } from "react-icons/bs";
+import { CiHeart } from "react-icons/ci";
+
 import LoginAuth from "./loginAuth";
 import {
   Box,
@@ -14,19 +18,20 @@ import {
   IconButton,
   useDisclosure,
   Stack,
-  Input, InputGroup, InputLeftElement
-  
+  Input,
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function withAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-
   return (
     <>
-      <Box  px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"} w={"80%"} margin={"auto"}>
+
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -53,43 +58,55 @@ export default function withAction() {
             >
               <NavLink to="/products/man">Men</NavLink>
               <NavLink to="/products/women">Women</NavLink>
-              <NavLink to="/">Mobile Cover</NavLink>
+              <NavLink to="/">Mobile </NavLink>
+              
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
-            <InputGroup variant="filled" size="xs">
-              <InputLeftElement
-                pointerEvents="none"
-                children={<AiOutlineSearch />}
-              />
-              <Input
-                type="tel"
-                // focusBorderColor="black.400"
-                placeholder="Search Product"
-                border="1px"
-              />
-            </InputGroup>
-            <NavLink to="/cart">
-              <AiFillHeart
+          <Flex alignItems={"center"} gap={"1rem"}>
+          <InputGroup
+                variant="filled"
+                size="sm"
                 style={{
-                  width: "50px",
-                  height: "40px",
+                  // marginLeft: "5em",
+                  width:"15rem",
+                  borderRadius:"15px",
+                  marginRight:"2rem"
+                }}
+              >
+                <InputLeftElement
+                
+                  pointerEvents="none"
+                  children={<AiOutlineSearch  />}
+                />
+                <Input  
+               
+                  type="tel"
+                  // focusBorderColor="black.400"
+                  placeholder="Search Product"
+                  border="1px"
+                />
+              </InputGroup>
+              <LoginAuth />
+            <NavLink to="/cart">
+            
+              <CiHeart
+                style={{
+                  width: "40px",
+                  height: "42px",
                 }}
               />
             </NavLink>
 
-           
-
             <NavLink to="/cart">
-              <AiOutlineShoppingCart
+              <BsBag
                 style={{
                   width: "50px",
-                  height: "40px",
-                  "marginRight":'1em'
+                  height: "28px",
+                  marginRight: "1em",
                 }}
               />
             </NavLink>
-            <LoginAuth />
+            {/* <LoginAuth /> */}
           </Flex>
         </Flex>
 
@@ -97,7 +114,9 @@ export default function withAction() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} to={`/products/${link}`}>
+                  {link}
+                </NavLink>
               ))}
             </Stack>
           </Box>
@@ -106,3 +125,5 @@ export default function withAction() {
     </>
   );
 }
+
+const Links = ["men", "women"];

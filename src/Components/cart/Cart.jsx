@@ -5,54 +5,121 @@ import { useState, useEffect } from "react";
 import Product from "./Add product/Product";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../../Redux/store";
 import {
   deleteItemFromCart,
   editCartItem,
   getCartProducts,
 } from "../../Redux/Cart/cart.actions";
-
+import { useNavigate } from "react-router";
+import { addOrders } from "../../Redux/Orders/orders.actions";
+import { Flex, Spinner, useToast, Image, Box, Heading } from "@chakra-ui/react";
+let dollarIndianLocale = Intl.NumberFormat("en-IN");
 
 const Cart = () => {
   const { loading, products, error } = useSelector(
     (store) => store.cartManager
   );
+  const toast = useToast();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   //   console.log(user);
   useEffect(() => {
-    dispatch(getCartProducts());
-  }, []);
-  console.log(products);
+    if (isAuthenticated) {
+      dispatch(getCartProducts(user.email));
+    }
+  }, [isAuthenticated]);
+
+  if (!isAuthenticated || loading) {
+    return (
+      <Flex justifyContent={"center"} p={"50px"}>
+        <Spinner textAlign={"center"} />
+      </Flex>
+    );
+  }
   const handleRemove = async (id) => {
     await dispatch(deleteItemFromCart(id));
-    dispatch(getCartProducts());
+    dispatch(getCartProducts(user.email));
+    toast({
+      title: "Item Removed!",
+      description: "Item has been removed from the cart.",
+      status: "success",
+      duration: 6000,
+      isClosable: true,
+    });
   };
 
-  const handleQtyChange = async (id, qty) => {
-    await dispatch(editCartItem(id, qty));
+  const handlePlace = async () => {
+    let item = {
+      user: user.email,
+      products: products.map((item) => {
+        return {
+          product: item.product,
+          qty: item.qty,
+          size: item.size,
+        };
+      }),
+      date: Date.now(),
+      status: "Pending",
+    };
+    await dispatch(addOrders(item));
+    let id = "";
+    for (let i = 0; i < products.length; i++) {
+      await dispatch(deleteItemFromCart(products[i].id));
+    }
 
-    dispatch(getCartProducts());
+    toast({
+      title: "Congratulations!!!",
+      description: "Your Order has been placed successfully.",
+      status: "success",
+      duration: 6000,
+      isClosable: true,
+    });
+    navigate("/");
+  };
+
+  const handleQtyChange = async ({ id, qty, size }) => {
+    await dispatch(editCartItem({ id, qty, size }));
+
+    dispatch(getCartProducts(user.email));
   };
 
   // total discount calculation
-  let res = products.map((el)=>{
-    return el.qty*el.product.price
-  })
-  res = res.reduce(function(sum,el){
-    return sum+el
-  },0)
+  let res = products.map((el) => {
+    return el.qty * el.product.price;
+  });
+  res = res.reduce(function (sum, el) {
+    return sum + el;
+  }, 0);
   // total original price calculation
-  let MRP = products.map((el)=>{
-    return el.qty*(+el.product.strickedoffprice.split(",").join("").substring(1))
-
-  })
-  MRP = MRP.reduce(function(sum,el){
-    return sum+el
-  },0)
+  let MRP = products.map((el) => {
+    return (
+      el.qty * +el.product.strickedoffprice.split(",").join("").substring(1)
+    );
+  });
+  MRP = MRP.reduce(function (sum, el) {
+    return sum + el;
+  }, 0);
   // saving amount
-  let saving = MRP-res
-console.log(saving)
+  let saving = MRP - res;
+
+  if (!products.length) {
+    return (
+      <Box px={"10%"} py={"30px"}>
+        <Image
+          src={
+            "https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png"
+          }
+          m={"auto"}
+          w={"30%"}
+        />
+        <Heading textAlign={"center"} color="gray">
+          Cart is empty
+        </Heading>
+      </Box>
+    );
+  }
+
   return (
     <div className="main__container">
       <h2>
@@ -131,7 +198,7 @@ console.log(saving)
               </div>
               <div>
                 <p>Total MRP (Incl. of taxes) </p>
-                <p>₹ {MRP}</p>
+                <p>₹{dollarIndianLocale.format(MRP)}/-</p>
               </div>
               <div>
                 <p>Shipping Charges </p>
@@ -139,15 +206,18 @@ console.log(saving)
               </div>
               <div>
                 <p>Bag Discount </p>
-                <p>- {saving}</p>
+                <p>- ₹{dollarIndianLocale.format(saving)}/-</p>
               </div>
               <div>
                 <p>Subtotal </p>
-                <p>₹ {res}</p>
+                <p>₹{dollarIndianLocale.format(res)}/-</p>
               </div>
               <div>
                 <div>
-                  <p>You are saving ₹ {saving} on this order</p>
+                  <p>
+                    You are saving ₹ {dollarIndianLocale.format(saving)}/- on
+                    this order
+                  </p>
                 </div>
               </div>
             </div>
@@ -156,10 +226,10 @@ console.log(saving)
                 <span>
                   <p>Total</p>
                   <p>
-                    <b>₹ {res}</b>
+                    <b>₹{dollarIndianLocale.format(res)}/-</b>
                   </p>
                 </span>
-                <button>ADD ADDRESS</button>
+                <button onClick={handlePlace}>Place Order</button>
               </div>
             </div>
           </div>

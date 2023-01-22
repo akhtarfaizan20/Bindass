@@ -13,3 +13,7 @@ export const EDIT_ORDERS_SUCCESS = "success/EDIT/total";
 export const DELETE_ORDERS_LOADING = "loading/DELETE/total";
 export const DELETE_ORDERS_ERROR = "error/DELETE/total";
 export const DELETE_ORDERS_SUCCESS = "success/DELETE/total";
+
+export const ADD_ORDERS_LOADING = "loading/ADD/total";
+export const ADD_ORDERS_ERROR = "error/ADD/total";
+export const ADD_ORDERS_SUCCESS = "success/ADD/total";

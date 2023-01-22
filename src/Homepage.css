@@ -3,7 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
 
-}
+
 .items{
    display: grid;
    grid-template-columns: repeat(6,16.5%);

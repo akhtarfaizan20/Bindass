@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { Link as mylink, Route, Routes } from "react-router-dom";
+import React from "react";
+import { Link as mylink, Route, Routes, useNavigate } from "react-router-dom";
 import logo from "../../Images/logo.png";
 import {
   IconButton,
@@ -32,16 +32,12 @@ import {
 } from "react-icons/fi";
 import { SiProducthunt } from "react-icons/si";
 import { HiOutlineUser } from "react-icons/hi";
-import AdminHome from "./AdminHome";
 import AdminOrders from "./AdminOrders";
-import Customers from "./Customers";
 import AdminProducts from "./AdminProducts";
 
 const LinkItems = [
-  { name: "Dasboard", icon: FiHome, href: "" },
-  { name: "Orders", icon: FiTrendingUp, href: "/orders" },
+  { name: "Orders", icon: FiTrendingUp, href: "" },
   { name: "Products", icon: SiProducthunt, href: "/products" },
-  { name: "Customers", icon: HiOutlineUser, href: "/customers" },
   // { name: "Settings", icon: FiSettings },
 ];
 
@@ -70,11 +66,8 @@ export default function Home({ children }) {
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         <Routes>
-          <Route path="/admin" element={<AdminHome />} />
-          <Route path="/admin/orders" element={<AdminOrders />} />
+          <Route path="/admin" element={<AdminOrders />} />
           <Route path="/admin/products" element={<AdminProducts />} />
-
-          <Route path="/admin/customers" element={<Customers />} />
         </Routes>
       </Box>
     </Box>
@@ -146,6 +139,8 @@ const NavItem = ({ icon, children, path, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const navigate = useNavigate();
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -218,7 +213,13 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Sign out
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./product.css";
 // import Size from './size'
+let dollarIndianLocale = Intl.NumberFormat("en-IN");
 
 const Product = (props) => {
-  console.log(props);
   const { desc, image, price, strickedoffprice } = props.product;
-  const { handleRemove, id, qty, handleQtyChange } = props;
+  const { handleRemove, id, qty, handleQtyChange, size } = props;
   let s = strickedoffprice.split(",").join("");
   let s1 = s.substring(1);
   let discount = +s1 - +price;
@@ -14,22 +14,37 @@ const Product = (props) => {
     <div className="main__prod__container">
       <div className="prod__desc">
         <div>
-          <p>{desc}</p>
+          <p
+            style={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              display: "-webkit-box",
+              webkitLineClamp: "1" /* number of lines to show */,
+              lineClamp: "1",
+              webkitBoxOrient: "vertical",
+            }}
+          >
+            {desc}
+          </p>
           <div className="inline">
-            <h1>₹{price}</h1>
+            <h1>₹{dollarIndianLocale.format(price)}/-</h1>
             <p>
-              <s>{strickedoffprice}</s>
+              <s>{strickedoffprice}/-</s>
             </p>
           </div>
-          <p>You saved ₹{discount}!</p>
+          <p>You saved ₹{dollarIndianLocale.format(discount)}/-</p>
         </div>
         <div>
           <img src={image} alt="prod" />
         </div>
-      
-      <div className="prod__qty">
-        <div>
-            size:<select>
+
+        <div className="prod__qty">
+          <div>
+            size:
+            <select
+              value={size}
+              onChange={(e) => handleQtyChange({ id, size: e.target.value })}
+            >
               <option value="XS">XS</option>
               <option value="S">S</option>
               <option value="M">M</option>
@@ -38,11 +53,12 @@ const Product = (props) => {
               <option value="2XL">2XL</option>
               <option value="3XL">3XL</option>
             </select>
-        </div>
-        <div>
-            Qty:<select
+          </div>
+          <div>
+            Qty:
+            <select
               value={qty}
-                onChange={(e) => handleQtyChange(id, e.target.value)}
+              onChange={(e) => handleQtyChange({ id, qty: e.target.value })}
             >
               <option value="1">1</option>
               <option value="2">2</option>
@@ -53,8 +69,8 @@ const Product = (props) => {
               <option value="7">7</option>
               <option value="8">8</option>
             </select>
+          </div>
         </div>
-      </div>
       </div>
       <div className="move__remove">
         <button onClick={() => handleRemove(id)}>Remove</button>
