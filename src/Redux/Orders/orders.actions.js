@@ -12,6 +12,8 @@ export const getOrders =
           _page: page,
           _limit: limit,
           user,
+          _sort: "date",
+          _order: "desc",
         },
       })
       .then((res) => {
