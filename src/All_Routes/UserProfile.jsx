@@ -1,14 +1,24 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import {
+  Avatar,
+  Box,
+  Center,
+  Flex,
+  Heading,
+  Spinner,
+  Text,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import UserOrder from "../Components/cart/user_order/userOrder";
-import { getOrders } from "../Redux/Orders/orders.actions";
+import AdminPagination from "../Components/Admin/Product/AdminPagination";
+import Orders from "../Components/Profile/Orders";
+import { getOrders, getTotalOrders } from "../Redux/Orders/orders.actions";
 import styles from "./Products.module.css";
 
 const UserProfile = () => {
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const [page, setPage] = useState(1);
-  const { loading, error, orders } = useSelector(
+  const { loading, error, orders, totalPages } = useSelector(
     (store) => store.ordersManager
   );
   const dispatch = useDispatch();
@@ -17,28 +27,61 @@ const UserProfile = () => {
     if (isAuthenticated) {
       // console.log("hi");
       dispatch(getOrders({ page, user: user.email }));
+      dispatch(getTotalOrders({ limit: 5, user: user.email }));
     }
   }, [isAuthenticated, page]);
-  console.log(user);
-  // console.log(orders);
-  if(!isAuthenticated){
-    return <h1>loading ...</h1>
+
+  const handleChange = (val) => {
+    setPage(val);
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <Center p={"50px"}>
+        <Spinner />
+      </Center>
+    );
   }
 
-  return (<div className={styles.main}>
-             <p>User Information</p>
-             
-             <div className={styles.user__order___container}>
-                <img src={user.picture} alt="pic"/>
-                
-             </div>
-             <p><b>{user?.name}</b></p>
-             <p>{user.email}</p>
-             <div className={styles.user__data}>
-                {/* {orders?.map((el)=> <UserOrder key={el.id} {...el} /> )}   */}
-             </div>
-            
-         </div>);
+  return (
+    <Box>
+      <Heading textAlign={"center"} color={"gray.600"}>
+        Your Profile
+      </Heading>
+
+      <Flex
+        direction={"column"}
+        justifyContent={"center"}
+        w={"fit-content"}
+        m={"auto"}
+      >
+        <Avatar src={user.picture} size={"2xl"} m={"auto"} mb={"20px"} />
+        <Heading size={"lg"} textAlign={"center"}>
+          {user.name}
+        </Heading>
+        <Heading size={"md"} textAlign={"center"} color={"gray.400"}>
+          {user.email}
+        </Heading>
+      </Flex>
+
+      <Box>
+        <Heading textAlign={"center"} color={"gray.600"}>
+          Your Orders
+        </Heading>
+        {orders.map((order) => {
+          return <Orders key={order.id} {...order} />;
+        })}
+
+        <Center>
+          <AdminPagination
+            page={page}
+            total={totalPages}
+            onChange={handleChange}
+          />
+        </Center>
+      </Box>
+    </Box>
+  );
 };
 
 export default UserProfile;

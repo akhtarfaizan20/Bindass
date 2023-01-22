@@ -2,7 +2,7 @@ import React from "react";
 let dollarIndianLocale = Intl.NumberFormat("en-IN");
 
 const OrderModalCard = ({ product, qty, size }) => {
-  console.log(product, qty);
+  // console.log(product, qty);
   const { desc, image, price, strickedoffprice } = product;
 
   let s = strickedoffprice.split(",").join("");

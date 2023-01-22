@@ -28,7 +28,7 @@ const AdminOrders = () => {
 
   useEffect(() => {
     dispatch(getOrders({ page, limit: 5 }));
-    dispatch(getTotalOrders());
+    dispatch(getTotalOrders({ limit: 5 }));
   }, [page]);
   const onChange = (val) => {
     setPage(val);

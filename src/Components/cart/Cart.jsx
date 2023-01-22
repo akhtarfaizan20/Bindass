@@ -12,7 +12,7 @@ import {
 } from "../../Redux/Cart/cart.actions";
 import { useNavigate } from "react-router";
 import { addOrders } from "../../Redux/Orders/orders.actions";
-import { useToast } from "@chakra-ui/react";
+import { Flex, Spinner, useToast, Image, Box, Heading } from "@chakra-ui/react";
 let dollarIndianLocale = Intl.NumberFormat("en-IN");
 
 const Cart = () => {
@@ -29,9 +29,24 @@ const Cart = () => {
       dispatch(getCartProducts(user.email));
     }
   }, [isAuthenticated]);
+
+  if (!isAuthenticated || loading) {
+    return (
+      <Flex justifyContent={"center"} p={"50px"}>
+        <Spinner textAlign={"center"} />
+      </Flex>
+    );
+  }
   const handleRemove = async (id) => {
     await dispatch(deleteItemFromCart(id));
     dispatch(getCartProducts(user.email));
+    toast({
+      title: "Item Removed!",
+      description: "Item has been removed from the cart.",
+      status: "success",
+      duration: 6000,
+      isClosable: true,
+    });
   };
 
   const handlePlace = async () => {
@@ -87,6 +102,24 @@ const Cart = () => {
   }, 0);
   // saving amount
   let saving = MRP - res;
+
+  if (!products.length) {
+    return (
+      <Box px={"10%"} py={"30px"}>
+        <Image
+          src={
+            "https://images.bewakoof.com/images/doodles/empty-cart-page-doodle.png"
+          }
+          m={"auto"}
+          w={"30%"}
+        />
+        <Heading textAlign={"center"} color="gray">
+          Cart is empty
+        </Heading>
+      </Box>
+    );
+  }
+
   return (
     <div className="main__container">
       <h2>
