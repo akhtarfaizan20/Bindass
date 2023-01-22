@@ -1,5 +1,6 @@
 import {
   Button,
+  Flex,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -49,15 +50,17 @@ const OrderRows = ({ id, date, user, products, status, handleStatus }) => {
           </Select>
         </Td>
       </Tr>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} scrollBehavior={"inside"}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Products ({products.length})</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {products.map((item) => {
-              return <OrderModalCard key={item.id} />;
-            })}
+            <Flex direction={"column"} gap={"20px"}>
+              {products.map((item) => {
+                return <OrderModalCard key={item.id} {...item} />;
+              })}
+            </Flex>
           </ModalBody>
 
           <ModalFooter>

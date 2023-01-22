@@ -16,12 +16,12 @@ const Product = (props) => {
         <div>
           <p>{desc}</p>
           <div className="inline">
-            <h1>₹{dollarIndianLocale.format(price)}</h1>
+            <h1>₹{dollarIndianLocale.format(price)}/-</h1>
             <p>
-              <s>{strickedoffprice}</s>
+              <s>{strickedoffprice}/-</s>
             </p>
           </div>
-          <p>You saved ₹{dollarIndianLocale.format(discount)}!</p>
+          <p>You saved ₹{dollarIndianLocale.format(discount)}/-</p>
         </div>
         <div>
           <img src={image} alt="prod" />

@@ -41,6 +41,7 @@ const Cart = () => {
         return {
           product: item.product,
           qty: item.qty,
+          size: item.size,
         };
       }),
       date: Date.now(),
