@@ -88,7 +88,7 @@ const Products = () => {
 
               <div className={styles.productMain}>
                 {products.map((e) => (
-                  <ProductDiv data={e} />
+                  <ProductDiv key ={e.id} data={e} />
                  // <ProductDiv data={e} ></ProductDiv>
                 ))}
               </div>

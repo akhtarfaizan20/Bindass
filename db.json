@@ -3394,63 +3394,22 @@
     {
       "user": "sordeomkar2564@gmail.com",
       "product": {
-        "image": "https://m.media-amazon.com/images/I/31Jbz2JhD8L._AC_UL320_.jpg",
-        "brand": "KOTTY",
-        "desc": "Womens High Rise Cotton Lycra Jeans",
-        "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "price": 499,
-        "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "ratings": 3.8,
+        "image": "https://m.media-amazon.com/images/I/51iJHqW4ynL._AC_UL320_.jpg",
+        "url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYXRmOjIwMDY4OTE3NzM0Mjk4OjowOjo&url=%2FGLOOT-T-Shirt-Sleeves-Stylish-Athleisure%2Fdp%2FB0B59W2Q8F%2Fref%3Dsr_1_1_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+        "brand": "GLOOT",
+        "desc": "by Nykaa Men’s Slim Fit 100% Cotton Anti Stain and Anti Odour Polo Collar T-Shirt Solid/Plain Half Sleeves Stylish Athleisure Gym Active Wear - GLCPQ01",
+        "desc_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYXRmOjIwMDY4OTE3NzM0Mjk4OjowOjo&url=%2FGLOOT-T-Shirt-Sleeves-Stylish-Athleisure%2Fdp%2FB0B59W2Q8F%2Fref%3Dsr_1_1_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+        "price": 1999,
+        "price_url": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2MjM1MDM5NDA1Njc5MTMyOjE2NzExNzE0ODE6c3BfYXRmOjIwMDY4OTE3NzM0Mjk4OjowOjo&url=%2FGLOOT-T-Shirt-Sleeves-Stylish-Athleisure%2Fdp%2FB0B59W2Q8F%2Fref%3Dsr_1_1_sspa%3Fcrid%3DDVNH3R4TU1EG%26keywords%3Dt-shirt%26qid%3D1671171481%26sprefix%3Dtshirt%252Caps%252C286%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+        "ratings": 3.5,
         "strickedoffprice": "₹1,999",
-        "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "target": "women",
-        "category": "jeans",
-        "id": 127
+        "target": "men",
+        "category": "t-shirt",
+        "id": 1
       },
       "size": "M",
       "qty": 1,
       "id": 1
-    },
-    {
-      "user": "sordeomkar2564@gmail.com",
-      "product": {
-        "image": "https://m.media-amazon.com/images/I/31Jbz2JhD8L._AC_UL320_.jpg",
-        "brand": "KOTTY",
-        "desc": "Womens High Rise Cotton Lycra Jeans",
-        "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "price": 499,
-        "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "ratings": 3.8,
-        "strickedoffprice": "₹1,999",
-        "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "target": "women",
-        "category": "jeans",
-        "id": 127
-      },
-      "size": "2XL",
-      "qty": 1,
-      "id": 2
-    },
-    {
-
-      "user": "sordeomkar2564@gmail.com",
-      "product": {
-        "image": "https://m.media-amazon.com/images/I/31Jbz2JhD8L._AC_UL320_.jpg",
-        "brand": "KOTTY",
-        "desc": "Womens High Rise Cotton Lycra Jeans",
-        "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "price": 499,
-        "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "ratings": 3.8,
-        "strickedoffprice": "₹1,999",
-        "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Jeans/dp/B08L26XC5J/ref=sr_1_27?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-27",
-        "target": "women",
-        "category": "jeans",
-        "id": 127
-      },
-      "size": "M",
-      "qty": 1,
-      "id": 3
     }
   ],
   "users": [
@@ -3704,6 +3663,32 @@
       "date": 1674368821353,
       "status": "Dispatched",
       "id": 5
+    },
+    {
+      "user": "sordeomkar2564@gmail.com",
+      "products": [
+        {
+          "product": {
+            "image": "https://m.media-amazon.com/images/I/51CyZP0d5GL._AC_UL320_.jpg",
+            "brand": "KOTTY",
+            "desc": "Womens High Rise Cotton Lycra Skinny Jeans",
+            "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+            "price": 499,
+            "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+            "ratings": 3.6,
+            "strickedoffprice": "₹1,999",
+            "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
+            "target": "women",
+            "category": "jeans",
+            "id": 129
+          },
+          "qty": 5,
+          "size": "XL"
+        }
+      ],
+      "date": 1674373788834,
+      "status": "Pending",
+      "id": 6
     }
   ]
 }
