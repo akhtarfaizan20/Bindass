@@ -3390,28 +3390,7 @@
       "id": 61
     }
   ],
-  "carts": [
-    {
-      "user": "akhtarfaizan@gmail.com",
-      "product": {
-        "image": "https://m.media-amazon.com/images/I/51CyZP0d5GL._AC_UL320_.jpg",
-        "brand": "KOTTY",
-        "desc": "Womens High Rise Cotton Lycra Skinny Jeans",
-        "desc_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
-        "price": 499,
-        "price_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
-        "ratings": 3.6,
-        "strickedoffprice": "₹1,999",
-        "strickedoffprice_url": "https://www.amazon.in/KOTTY-Womens-Cotton-Lycra-Skinny/dp/B089FP2NB4/ref=sr_1_29?crid=K4M1M6XZX81B&keywords=jeans&qid=1671174813&sprefix=jean%2Caps%2C651&sr=8-29",
-        "target": "women",
-        "category": "jeans",
-        "id": 129
-      },
-      "size": "M",
-      "qty": 4,
-      "id": 2
-    }
-  ],
+  "carts": [],
   "users": [
     {
       "id": "akhtarfaizan20@gmail.com",
