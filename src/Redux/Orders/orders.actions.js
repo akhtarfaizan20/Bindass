@@ -23,11 +23,15 @@ export const getOrders =
   };
 
 export const getTotalOrders =
-  (limit = 5) =>
+  ({ limit = 5, user }) =>
   (dispatch) => {
     dispatch({ type: types.GET_TOTAL_ORDERS_LOADING });
     return axios
-      .get(`http://localhost:8080/orders`)
+      .get(`http://localhost:8080/orders`, {
+        params: {
+          user,
+        },
+      })
       .then((res) => {
         dispatch({
           type: types.GET_TOTAL_ORDERS_SUCCESS,
