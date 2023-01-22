@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import UserOrder from "../Components/cart/user_order/userOrder";
 import { getOrders } from "../Redux/Orders/orders.actions";
 import styles from "./Products.module.css";
 
