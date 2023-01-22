@@ -2,7 +2,7 @@ import axios from "axios";
 import * as types from "./orders.types";
 
 export const getOrders =
-  ({ page = 1, limit = 5 }) =>
+  ({ page = 1, limit = 5, user }) =>
   (dispatch) => {
     dispatch({ type: types.GET_ORDERS_LOADING });
 
@@ -11,6 +11,7 @@ export const getOrders =
         params: {
           _page: page,
           _limit: limit,
+          user,
         },
       })
       .then((res) => {
