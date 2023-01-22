@@ -29,6 +29,7 @@ const Products = () => {
   //console.log(target);
 
   useEffect(() => {
+    
     dispatch(getProducts({ target, page, limit ,sort , order}));
     
   }, [page, target, sort, order]);

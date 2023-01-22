@@ -91,5 +91,10 @@
         /* border: 1px solid blue; */
         text-align: center;
       }
+      .proFilter {
+        width: 25%;
+        /* border: 1px solid red; */
+       display: none;
+      }
     
  } 
