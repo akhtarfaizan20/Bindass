@@ -75,7 +75,7 @@ const Cart = () => {
       duration: 6000,
       isClosable: true,
     });
-    navigate("/");
+    navigate("/user-profile");
   };
 
   const handleQtyChange = async ({ id, qty, size }) => {
