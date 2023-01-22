@@ -51,7 +51,7 @@ function Login() {
         p={6}
         my={12}>
         <Heading lineHeight={1.1} fontSize={{ base: '2xl', md: '3xl' }}>
-          Enter new password
+          Admin Form
         </Heading>
         <FormControl id="email" isRequired>
           <FormLabel>Email address</FormLabel>
