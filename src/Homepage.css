@@ -1,3 +1,7 @@
+.Main{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 
 
 .items{
@@ -37,11 +41,16 @@
         display: grid;
         grid-template-columns: repeat(3,30%);
         width: 95%;
+        justify-content: center;
+        align-items: center;
    height: auto;
    margin: auto;
    padding: 5px;
+ 
        
      }
+
+   
      .items2{
       display: grid;
       grid-template-columns:100%;
@@ -50,6 +59,8 @@
       align-items: center;
       height: auto;
       padding: 5px;
+      margin-left: 10px;
+      
     }
     .items3{
       display: grid;
