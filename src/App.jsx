@@ -6,7 +6,7 @@ import Login from "./All_Routes/Login";
 import Footer from "./Components/Navbar/Footer";
 import LoginAuth from "./Components/Navbar/loginAuth";
 import Navbar from "./Components/Navbar/Navbar";
-
+import { Box } from "@chakra-ui/react";
 function App() {
   const { pathname } = useLocation();
 
@@ -19,8 +19,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <AllRoutes />
-      <Footer />
+      <Box pt={"70px"}>
+        <AllRoutes />
+        <Footer />
+      </Box>
     </div>
   );
 }
