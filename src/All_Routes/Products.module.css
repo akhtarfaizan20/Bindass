@@ -73,6 +73,33 @@
   text-align: center;
 }
 
+
+.main{
+  /* border:1px solid blue;  */
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  gap:1rem;
+}
+
+.main>p{
+    font-size: 2rem;
+}
+.user__order___container>img{
+  border-radius: 50%;
+}
+.main>p:nth-child(1){
+  font-size: 3.5rem;
+  color:brown;
+}
+.main>p:nth-child(4){
+  color:grey
+}
+
+
+
+
 @media (min-width: 480px) and (max-width: 800px) {
 
     .productMain {
