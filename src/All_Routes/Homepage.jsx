@@ -153,11 +153,13 @@ const breakpoints2=[
     </table>
     <center><b>TRENDING CATEGORIES</b></center>
     <div className='items'>
+      
     {
       data1?.map(({url},i)=>(
        <div key={i}><Img src={url} alt="bindass"/></div> 
       ))
     }
+    
     </div>
     <div className='items2'>
     {
