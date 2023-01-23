@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as types from "./singleProduct.types";
+const BASE_URL = "https://bindass-db.onrender.com";
 
 export const getSingleProducts =
   ({ id }) =>
@@ -7,7 +8,7 @@ export const getSingleProducts =
     dispatch({ type: types.GET_SINGLE_PRODUCT_LOADING });
 
     return axios
-      .get(`http://localhost:8080/products/${id}`)
+      .get(`${BASE_URL}/products/${id}`)
       .then((res) => {
         dispatch({ type: types.GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
       })
@@ -15,5 +16,3 @@ export const getSingleProducts =
         dispatch({ type: types.GET_SINGLE_PRODUCT_ERROR });
       });
   };
-
-
