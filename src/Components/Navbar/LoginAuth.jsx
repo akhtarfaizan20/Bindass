@@ -87,7 +87,7 @@ function LoginAuth() {
                 </Box>
               </Flex>
             </PopoverTrigger>
-            <PopoverContent _focus={{ boxShadown: "none" }}>
+            <PopoverContent _focus={{ boxShadown: "none" }} mt={"-70px"}>
               <PopoverBody w="full">
                 {isAuthenticated && (
                   <Center>
