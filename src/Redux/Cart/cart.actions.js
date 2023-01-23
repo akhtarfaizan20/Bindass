@@ -1,10 +1,12 @@
 import axios from "axios";
 import * as types from "./cart.types";
 
+const BASE_URL = "https://bindass-db.onrender.com";
+
 export const getCartProducts = (email) => (dispatch) => {
   dispatch({ type: types.GET_CART_LOADING });
   return axios
-    .get(`http://localhost:8080/carts?user=${email}`)
+    .get(`${BASE_URL}/carts?user=${email}`)
     .then((res) => {
       dispatch({ type: types.GET_CART_SUCCESS, payload: res.data });
     })
@@ -16,7 +18,7 @@ export const getCartProducts = (email) => (dispatch) => {
 export const deleteItemFromCart = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_CART_LOADING });
   return axios
-    .delete(`http://localhost:8080/carts/${id}`)
+    .delete(`${BASE_URL}/carts/${id}`)
     .then(() => {
       dispatch({ type: types.DELETE_CART_SUCCESS });
     })
@@ -30,7 +32,7 @@ export const editCartItem =
   (dispatch) => {
     dispatch({ type: types.EDIT_CART_LOADING });
     return axios
-      .patch(`http://localhost:8080/carts/${id}`, {
+      .patch(`${BASE_URL}/carts/${id}`, {
         qty: qty ? +qty : undefined,
         size,
       })
@@ -45,7 +47,7 @@ export const editCartItem =
 export const addToCart = (item) => (dispatch) => {
   dispatch({ type: types.ADD_CART_LOADING });
   return axios
-    .post(`http://localhost:8080/carts`, item)
+    .post(`${BASE_URL}/carts`, item)
     .then(() => {
       dispatch({ type: types.ADD_CART_SUCCESS });
     })

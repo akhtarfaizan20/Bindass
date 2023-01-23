@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as types from "./orders.types";
+const BASE_URL = "https://bindass-db.onrender.com";
 
 export const getOrders =
   ({ page = 1, limit = 5, user }) =>
@@ -7,7 +8,7 @@ export const getOrders =
     dispatch({ type: types.GET_ORDERS_LOADING });
 
     return axios
-      .get(`http://localhost:8080/orders`, {
+      .get(`${BASE_URL}/orders`, {
         params: {
           _page: page,
           _limit: limit,
@@ -29,7 +30,7 @@ export const getTotalOrders =
   (dispatch) => {
     dispatch({ type: types.GET_TOTAL_ORDERS_LOADING });
     return axios
-      .get(`http://localhost:8080/orders`, {
+      .get(`${BASE_URL}/orders`, {
         params: {
           user,
         },
@@ -47,7 +48,7 @@ export const getTotalOrders =
 export const editOrders = (id, status) => (dispatch) => {
   dispatch({ type: types.EDIT_ORDERS_LOADING });
   return axios
-    .patch(`http://localhost:8080/orders/${id}`, {
+    .patch(`${BASE_URL}/orders/${id}`, {
       status,
     })
     .then((res) => {
@@ -64,7 +65,7 @@ export const editOrders = (id, status) => (dispatch) => {
 export const deleteOrders = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_ORDERS_LOADING });
   return axios
-    .delete(`http://localhost:8080/orders/${id}`)
+    .delete(`${BASE_URL}/orders/${id}`)
     .then((res) => {
       dispatch({
         type: types.DELETE_ORDERS_SUCCESS,
@@ -78,7 +79,7 @@ export const deleteOrders = (id) => (dispatch) => {
 export const addOrders = (item) => (dispatch) => {
   dispatch({ type: types.ADD_ORDERS_LOADING });
   return axios
-    .post(`http://localhost:8080/orders`, item)
+    .post(`${BASE_URL}/orders`, item)
     .then((res) => {
       dispatch({
         type: types.ADD_ORDERS_SUCCESS,
