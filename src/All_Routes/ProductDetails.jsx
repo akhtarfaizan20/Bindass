@@ -40,7 +40,7 @@ const ProductDetails = () => {
     (store) => store.singleProductManager
   );
 
-  const [size,setSize]=useState("M");
+  const [size, setSize] = useState("M");
 
   useEffect(() => {
     dispatch(getSingleProducts({ id }));
@@ -49,7 +49,7 @@ const ProductDetails = () => {
   console.log(product);
   const { image, desc, brand, price, strickedoffprice, ratings } = product;
   const handleAddToCart = async () => {
-    if(isAuthenticated){
+    if (isAuthenticated) {
       let item = {
         user: user.email,
         product: product,
@@ -63,21 +63,28 @@ const ProductDetails = () => {
         status: "success",
         duration: 6000,
         isClosable: true,
-        position:"top",
-
+        position: "top",
       });
-    }else{
+    } else {
       toast({
         title: "Please, Sign in first",
-        position:"top",
-        description: "Kindly sign in to your account to add product in your cart.",
+        position: "top",
+        description:
+          "Kindly sign in to your account to add product in your cart.",
         status: "info",
         duration: 6000,
         isClosable: true,
       });
     }
-  
   };
+
+  if (loading) {
+    return (
+      <Flex justifyContent={"center"} p={"50px"}>
+        <Spinner textAlign={"center"} />
+      </Flex>
+    );
+  }
 
   return (
     <Container maxW={"7xl"}>
@@ -103,7 +110,7 @@ const ProductDetails = () => {
             fontWeight="normal"
             fontSize={"3xl"}
           >
-            Bindass
+            {brand}
           </Text>
           <Box as={"header"}>
             <Heading
@@ -134,7 +141,9 @@ const ProductDetails = () => {
             >
               Price ₹{dollarIndianLocale.format(price)}/- {"   "}
               {"   "}
-              <s style={{fontSize:"14px", fontWeight:"lighter"}}>{strickedoffprice}/-</s>
+              <s style={{ fontSize: "14px", fontWeight: "lighter" }}>
+                {strickedoffprice}/-
+              </s>
             </Box>
           </Box>
           <Box>
@@ -146,21 +155,39 @@ const ProductDetails = () => {
               Select Size
             </Text>
             <br />
-            <Grid width={"80%"} templateColumns={useBreakpointValue({base:"repeat(3,1fr)", md:"repeat(7,1fr)"}) }gap={"20px"}  >
-              {
-                sizes.map((item)=>{
-                  return <Flex key={item} border={size===item?"2px solid black":"1px solid #ddd"} h={"50px"} justifyContent={"center"} alignItems={"center"} onClick={()=>setSize(item)} >{item}</Flex>
-                })
-              }
+            <Grid
+              width={"80%"}
+              templateColumns={useBreakpointValue({
+                base: "repeat(3,1fr)",
+                md: "repeat(7,1fr)",
+              })}
+              gap={"20px"}
+            >
+              {sizes.map((item) => {
+                return (
+                  <Flex
+                    key={item}
+                    border={
+                      size === item ? "2px solid black" : "1px solid #ddd"
+                    }
+                    h={"50px"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    onClick={() => setSize(item)}
+                  >
+                    {item}
+                  </Flex>
+                );
+              })}
             </Grid>
             <Text
-                fontSize={{ base: "16px", lg: "18px" }}
-                color={useColorModeValue("teal.500", "teal.300")}
-                py={2}
-                mb={"3"}
-              >
-                Cloths size {size} selected
-              </Text>
+              fontSize={{ base: "16px", lg: "18px" }}
+              color={useColorModeValue("teal.500", "teal.300")}
+              py={2}
+              mb={"3"}
+            >
+              Cloths size {size} selected
+            </Text>
           </Box>
 
           <Stack
@@ -261,6 +288,4 @@ const ProductDetails = () => {
 
 export default ProductDetails;
 
-
-
-const sizes=["XS","S","M","L","XL","2XL","3XL"];
+const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
