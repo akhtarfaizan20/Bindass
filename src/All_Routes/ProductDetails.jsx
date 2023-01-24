@@ -20,6 +20,7 @@ import {
   GridItem,
   Grid,
   useBreakpointValue,
+  Spinner,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdLocalShipping } from "react-icons/md";
@@ -78,14 +79,6 @@ const ProductDetails = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <Flex justifyContent={"center"} p={"50px"}>
-        <Spinner textAlign={"center"} />
-      </Flex>
-    );
-  }
-
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -94,15 +87,21 @@ const ProductDetails = () => {
         py={{ base: 18, md: 24 }}
       >
         <Flex>
-          <Image
-            rounded={"md"}
-            alt={"product image"}
-            src={image}
-            fit={"cover"}
-            align={"center"}
-            w={"50%"}
-            h={{ base: "80%", sm: "300px", lg: "400px" }}
-          />
+          {loading ? (
+            <Flex justifyContent={"center"} p={"50px"}>
+              <Spinner textAlign={"center"} />
+            </Flex>
+          ) : (
+            <Image
+              rounded={"md"}
+              alt={"product image"}
+              src={image}
+              fit={"cover"}
+              align={"center"}
+              w={"50%"}
+              h={{ base: "80%", sm: "300px", lg: "400px" }}
+            />
+          )}
         </Flex>
         <Stack spacing={{ base: 2, md: 4 }}>
           <Text
