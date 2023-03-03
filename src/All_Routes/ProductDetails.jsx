@@ -45,7 +45,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     dispatch(getSingleProducts({ id }));
-  }, []);
+  }, [id]);
 
   console.log(product);
   const { image, desc, brand, price, strickedoffprice, ratings } = product;

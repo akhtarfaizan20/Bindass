@@ -26,6 +26,25 @@ export const getProducts =
       });
   };
 
+export const searchProducts =
+  ({ q }) =>
+  (dispatch) => {
+    console.log("called");
+    dispatch({ type: types.GET_PRODUCT_LOADING });
+    return axios
+      .get(`${BASE_URL}/products`, {
+        params: {
+          q,
+        },
+      })
+      .then((res) => {
+        dispatch({ type: types.GET_PRODUCT_SUCCESS, payload: res.data });
+      })
+      .catch(() => {
+        dispatch({ type: types.GET_PRODUCT_ERROR });
+      });
+  };
+
 export const getTotalProducts =
   (limit = 10) =>
   (dispatch) => {

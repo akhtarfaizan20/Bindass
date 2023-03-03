@@ -27,6 +27,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import Search from "./Search";
 
 export default function withAction() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -79,26 +80,9 @@ export default function withAction() {
             </HStack>
           </HStack>
           <Flex alignItems={"center"} gap={"1rem"}>
-            <InputGroup
-              w={"370px"}
-              mt={2}
-              display={useBreakpointValue({ base: "none", md: "solid" })}
-            >
-              <InputLeftElement
-                py={"20px"}
-                pointerEvents="none"
-                children={
-                  <AiOutlineSearch color="gray.300" fontSize={"20px"} />
-                }
-              />
-              <Input
-                py={"20px"}
-                type="tel"
-                placeholder="Search by product, category or collection"
-                focusBorderColor="gray.400"
-                variant={"filled"}
-              />
-            </InputGroup>
+            <Box>
+              <Search />
+            </Box>
             <LoginAuth />
             <NavLink to="/cart">
               <Text fontSize={"35px"}>
