@@ -57,8 +57,6 @@ const Search = () => {
       dispatch(searchProducts({ q: searchRef.current.value || "" }));
     }
   };
-  const processChange = debounce(searchData, 3000);
-
   const handleChange = () => {
     if (isOpen && searchRef.current) {
       if (!searchRef.current.value.length) {
@@ -66,6 +64,7 @@ const Search = () => {
       }
     }
   };
+  const processChange = debounce(searchData, 3000);
 
   return (
     <InputGroup
