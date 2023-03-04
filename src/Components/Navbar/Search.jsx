@@ -82,7 +82,7 @@ const Search = () => {
         />
         <Input
           py={"20px"}
-          type="tel"
+          type="text"
           placeholder="Search by product, category or collection"
           focusBorderColor="gray.400"
           variant={"filled"}
@@ -113,7 +113,7 @@ const Search = () => {
                 />
                 <Input
                   py={"20px"}
-                  type="tel"
+                  type="text"
                   placeholder="Search by product, category or collection"
                   focusBorderColor="gray.400"
                   variant={"filled"}
