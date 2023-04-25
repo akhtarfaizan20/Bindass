@@ -19,7 +19,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProducts } from "../../Redux/Products/products.actions";
@@ -27,39 +27,28 @@ import { searchProducts } from "../../Redux/Products/products.actions";
 const Search = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { loading, products } = useSelector((state) => state.productManager);
-  const searchRef = useRef(null);
-  const searchOutside = useRef(null);
+  // const searchRef = useRef(null);
+  // const searchOutside = useRef(null);
+  const [searchInput, setSearchInput] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  //   console.log(products);
 
-  function debounce(func, timeout = 3000) {
-    let timer;
-    return () => {
-      if (timer) {
-        return;
-      }
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, arguments);
-      }, timeout);
-    };
-  }
+  const getData = () => {
+    dispatch(searchProducts({ q: searchInput }));
+  };
 
-  const searchData = () => {
-    if (searchRef.current) {
-      dispatch(searchProducts({ q: searchRef.current.value || "" }));
+  useEffect(() => {
+    if (searchInput.length) {
+      onOpen();
+    } else {
+      onClose();
     }
-  };
-  const handleChange = () => {
-    if (isOpen && searchRef.current) {
-      if (!searchRef.current.value.length) {
-        onClose();
-      }
-    }
-  };
-  const processChange = debounce(searchData, 500);
+
+    let timer = setTimeout(getData, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   return (
     <>
@@ -86,17 +75,9 @@ const Search = () => {
           placeholder="Search by product, category or collection"
           focusBorderColor="gray.400"
           variant={"filled"}
-          ref={searchOutside}
-          onClick={async () => {
-            await onOpen();
-            searchRef.current.focus();
-            searchRef.current.value = searchOutside.current.value;
-          }}
-          onChange={async (e) => {
-            await onOpen();
-            searchRef.current.value = e.target.value;
-            searchRef.current.focus();
-          }}
+          // ref={searchOutside}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
 
         <Modal isOpen={isOpen} onClose={onClose} scrollBehavior={"inside"}>
@@ -117,12 +98,9 @@ const Search = () => {
                   placeholder="Search by product, category or collection"
                   focusBorderColor="gray.400"
                   variant={"filled"}
-                  ref={searchRef}
-                  onChange={(e) => {
-                    searchOutside.current.value = searchRef.current.value;
-                    processChange();
-                    handleChange();
-                  }}
+                  // ref={searchRef}
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
                 />
               </InputGroup>
             </ModalHeader>
